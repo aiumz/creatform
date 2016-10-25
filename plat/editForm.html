@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建表单</title>
+    <!--<link href="../plugin/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>-->
+    <link href="../plugin/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../plugin/My97DatePicker/skin/WdatePicker.css" rel="stylesheet"/>
+    <link href="../theme/style.css" rel="stylesheet"/>
+    <link href="../theme/colpick.css" rel="stylesheet"/>
+    <link type="text/css" rel="stylesheet" href="../plugin/pingfen/demo/css/application.css">
+    <link rel="stylesheet" href="../plugin/quse/css/colorpicker.css" type="text/css"/>
+</head>
+<body>
+<div>
+    <div class="sjmf-edit-form">
+        <div class="sjmf-form-step">
+            <p class="formBuilder-title"><span><em class="step-num">1</em></span>选择模板</p>
+            <p class="formBuilder-line"></p>
+            <p class="formBuilder-title active"><span><em class="step-num active">2</em></span>设计表单</p>
+            <p class="formBuilder-line"></p>
+            <p class="formBuilder-title"><span><em class="step-num">3</em></span>生成表单</p>
+        </div>
+        <div class="sjmf-edit-botttom">
+            <div class="sjmf-form-content">
+                <div class="formBuilder-interim"></div>
+                <div class="formBuilder-example">
+                    <div class="formBuilder-example-form">
+                        <div class="form-builder-main">
+                            <div class="sjmf-form-title clearfix text-center">
+                                <div class="formLogo"></div>
+                                <div class="title"><h2>fgfjfjh</h2>
+                                </div>
+                                <p class="main-form-desc"></p>
+                            </div>
+                            <div id="main" class="form-component ui-sortable">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formBuilder-example-use">
+                    <!-- <a class="btn btn-primary ">重新选择模板</a>-->
+                    <a class="btn btn-primary " href="#" id="ajaxPostInfor">测试提交数据</a>
+                    <a class="btn btn-primary " href="index.html">保存表单</a>
+                    <a class="btn btn-primary " href="generateForm.html">
+                        <span>生成表单</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sjmf-form-edit">
+                <div class="formBuilder-interim">
+                    <div class="form-edit-titlefield">
+                        <p class="formBuilder-interim-edit " data-show="sjmf-szbd">
+                            表单设置
+                        </p>
+                        <p class="formBuilder-interim-edit active" data-show="sjmf-tjzj">
+                            添加组件
+                        </p>
+                        <p class="formBuilder-interim-edit edit-plug" data-show="sjmf-bjzj">
+                            编辑组件
+                        </p>
+                        <p class="formBuilder-interim-edit hide" data-show="sjmf-psfa">
+                            配色方案
+                        </p>
+                    </div>
+                    <div class="form-edit-titlefield sjmf-colo-set">
+                        <p class="formBuilder-interim-color">
+                            配色方案
+                        </p>
+                    </div>
+                    <div class="sjmf-sznr">
+                        <!--表单设置-->
+                        <div class="sjmf-szbd hide  sjmfEditForm">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title text-center">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                            表单外观
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse ">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label for="form-title">标题</label>
+                                            <input type="text" class="form-control" id="form-title"
+                                                   placeholder="请输入表单名称" value="空白的表单">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="form-desc">描述文字</label>
+                                            <input type="text" class="form-control" id="form-desc"
+                                                   placeholder="请输入描述文字" value="描述文字">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title text-center">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#collapseTwo">
+                                            填写限制
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse ">
+                                    <div class="panel-body">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="trim1">定时启用表单
+                                            </label>
+                                        </div>
+                                        <div class="sjmf-bd-fanki" style="display: none">
+                                            <div class="form-group sjmf-ds">
+                                                <label class="col-sm-5 control-label p-l-0 font-normal" >开始启用表单时间</label>
+                                                <div class="col-sm-7">
+                                                    <input type="text" id="trimStart" class="form-control"  onClick="WdatePicker({minDate:'%y-%M-01 00:00',dateFmt:'yyyy-MM-dd HH:mm',alwaysUseStartDate:true})">
+                                                </div>
+                                            </div>
+                                            <p class="current-time">当前时间：<span class="now-year"></span> 年 <span
+                                                    class="now-month"></span> 月 <span class="now-day"></span> 日
+                                                <span class="now-time"></span></p>
+                                            <!-- <p class="formStartError" style="visibility: visible;">
+                                                 启用表单的时间不能早于当前时间哦~~</p>-->
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="trim2">定时停用表单
+                                            </label>
+                                        </div>
+                                        <div class="sjmf-bd-fanki" style="display: none;">
+                                            <div class="form-group sjmf-ds">
+                                                <label class="col-sm-5 control-label p-l-0 font-normal">停止收集表单时间</label>
+                                                <div class="col-sm-7">
+                                                    <input type="text" id="trimEnd" class="form-control" onClick="WdatePicker({minDate:'%y-%M-01 00:00',dateFmt:'yyyy-MM-dd HH:mm',alwaysUseStartDate:true})">
+                                                </div>
+                                            </div>
+                                            <p class="current-time">当前时间：<span class="now-year"></span> 年 <span
+                                                    class="now-month"></span> 月 <span class="now-day"></span> 日
+                                                <span class="now-time"></span></p>
+                                            <!-- <p class="formStartError" style="visibility: visible;">
+                                                 停用表单的时间不能早于当前时间哦~~~</p>-->
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="stopAfterNum">收集定量反馈后停用表单
+                                            </label>
+                                        </div>
+                                        <div class="sjmf-bd-fanki" style="display: none;">
+                                            <div>
+                                                <span>收集到</span>
+                                                <input class="feedbackNum" value="" id="maxnum">
+                                                <span>份反馈后停用表单</span>
+                                            </div>
+                                            <p class="current-time">当前已收集反馈 <span>0</span> 份</p>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="isweixin">只能通过微信提交
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="isonevote">每个用户只能提交一次
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title text-center">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#collapseThree">
+                                            表单提交
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <label>用户提交表单后</label>
+                                        <div class="form-group">
+                                            <label class="checkbox-inline p-l-0">
+                                                <input type="radio" name="after-submit-form" id="optionsRadios1"
+                                                       value="0" checked> 显示文字
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="radio" name="after-submit-form" id="optionsRadios2"
+                                                       value="1"> 跳转到指定页面
+                                            </label>
+                                            <input type="text" class="form-control m-t-20" value="" id="completeinfo">
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="feedbackview">提交后，公开反馈统计图表
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="feedbackdetail">提交后，公开全部反馈详情
+                                            </label>
+                                        </div>
+                                        <div class="sjmf-bd-fanki">
+                                            <div class="form-group">
+                                                <label class="font-normal">反馈详情查看密码</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">提交后生成随机码
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">开启新反馈到达提醒
+                                            </label>
+                                        </div>
+                                        <!--<div class="sjmf-bd-fanki">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox">发送通知提醒「邮件」
+                                                </label>
+                                            </div>
+                                            <div class="sjmf-bd-fanki">
+                                                <div class="form-group">
+                                                    <label class="font-normal">接收邮件者的邮箱 (最多10个)</label>
+                                                    <input type="email" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="font-normal">接收邮件者的称呼</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox">发送通知提醒「短信」
+                                                </label>
+                                            </div>
+                                            <div class="sjmf-bd-fanki">
+                                                <div class="form-group">
+                                                    <label class="font-normal">接收反馈短信的手机号码(最多3个)</label>
+                                                    <input type="email" class="form-control">
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label class="font-normal">
+                                                        <input type="checkbox">每个反馈最多发送一条提醒短信
+                                                    </label>
+                                                </div>
+                                                <div>可用短信配额：<span class="sms-quota">0.0</span>
+                                                    <a class="mobile_smsvcode_link" href="#" target="_blank">购买配额</a>
+                                                </div>
+                                                <a href="#">通过「微信」跟踪反馈提醒</a>
+                                            </div>
+                                        </div>-->
+                                        <div class="checkbox">
+                                            <label>
+                                                <!--当添加联系人组件后才可选择-->
+                                                <input type="checkbox" disabled>用户提交表单后，自动创建联系人（需要联系人组件）
+                                            </label>
+                                        </div>
+                                        <!--<div>
+                                            <p class="formBuilder_edit_item formBuilder_edit_item_group">加入到群组：</p>
+                                            <p class="viewContact_group">啊啊</p>
+                                            <div class="dropdown">
+                                                <button type="button" class="btn dropdown-toggle select-group" id="dropdownMenu2" data-toggle="dropdown">选择群组
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu group_firstLi clearfix" role="menu" aria-labelledby="dropdownMenu2">
+                                                    <li class=" clearfix" style="display: block;">
+                                                        <div class="fll font-12">请选择群组：</div>
+                                                        <span class="add_creatGroup flr font-12">新建群组</span>
+                                                        <br class="clearfix">
+                                                        <span class="cerateGroup_field"><input class="input input_creatGroup form-control" maxlength="8"><a class="btn btn-primary btn_creatGroup btn-sm font-12">创建</a><a class="btn_cancleCreatGroup font-12">取消</a></span>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox">一组
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox">二组
+                                                            </label>
+                                                        </div>
+                                                    </li>
+
+                                                </ul>
+
+                                            </div>
+                                            <p class="formBuilder_edit_item">添加标签：</p>
+                                            <p class="formBuilder_edit_tag">
+                                            <div class="mgContainer">
+                                                <div class="mgTagFlow">
+                                                    <span class="mgTagItem"><span>啊啊啊</span><a class="x">X</a></span>
+                                                    <span class="label_add_input"><input type="text" /></span>
+                                                    <span class="mgAddTagBtn">+</span>
+                                                </div>
+                                            </div>
+                                            </p>
+                                        </div>-->
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">在表单右侧显示分享二维码
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div style="height:170px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--添加组件-->
+                        <div class="sjmf-tjzj  sjmfEditForm">
+                            <ul class="clearfix p-l-0 sjmf-utility-first">
+                                <li class="sjmf-utility" data-formType="dhwb" id="signInput">
+                                    <span class="sjmf-tit">单行文本</span>
+                                    <span class="formOption formOption_text"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="sz" id="number">
+                                    <span class="sjmf-tit" >数字</span>
+                                    <span class="formOption formOption_number"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="mdhwb" id="mulitInput">
+                                    <span class="sjmf-tit">多行文本</span>
+                                    <span class="formOption formOption_multiple"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="xlcd" id="selectMeun">
+                                    <span class="sjmf-tit">下拉菜单</span><span class="formOption formOption_dropDown"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="dx" id="radio">
+                                    <span class="sjmf-tit">单选</span><span class="formOption formOption_radio"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="mdx" id="mulitRadio">
+                                    <span class="sjmf-tit">多选</span><span class="formOption formOption_checkbox"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="tpdx" id="imgRadio">
+                                    <span class="sjmf-tit">图片单选</span><span class="formOption formOption_pictureRadio"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="tpmdx" id="imgMulit">
+                                    <span class="sjmf-tit">图片多选</span><span class="formOption formOption_pictureCheckbox" ></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="rq" id="date">
+                                    <span class="sjmf-tit">日期</span><span class="formOption formOption_data"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="fj" id="appendix">
+                                    <span class="sjmf-tit">附件</span><span class="formOption formOption_fileUpload"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="pf" id="grade">
+                                    <span class="sjmf-tit">评分</span><span class="formOption formOption_star"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="sp" id="goods">
+                                    <span class="sjmf-tit">商品</span><span class="formOption formOption_shopping"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="tp" id="img">
+                                    <span class="sjmf-tit" >图片</span><span class="formOption formOption_picture"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="fgx" id="rule">
+                                    <span class="sjmf-tit">分割线</span><span class="formOption formOption_section"></span>
+                                </li>
+                                <li class="sjmf-utility" data-formType="fy" id="pageTurning">
+                                    <span class="sjmf-tit">分页</span><span class="formOption formOption_page"></span>
+                                </li>
+                            </ul>
+                            <ul class="clearfix p-l-0 contacts-utility">
+                                <hr/>
+                                <li class="utility-describe">联系人组件<span>用户在组件中填写的内容，会自动成为联系人的信息项</span></li>
+                                <li class="sjmf-utility limit-disable">
+                                    <span class="sjmf-tit " data-formType="xm">姓名</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="gs">
+                                    <span class="sjmf-tit">公司</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="zw">
+                                    <span class="sjmf-tit">职位</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="txdz">
+                                    <span class="sjmf-tit">通讯地址</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="sj">
+                                    <span class="sjmf-tit">手机</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="yx">
+                                    <span class="sjmf-tit">E-mail</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="qq">
+                                    <span class="sjmf-tit">QQ</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="wx">
+                                    <span class="sjmf-tit">微信</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="xb">
+                                    <span class="sjmf-tit">性别</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="cs">
+                                    <span class="sjmf-tit">城市</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="gh">
+                                    <span class="sjmf-tit">固话</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="cz">
+                                    <span class="sjmf-tit">传真</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="wz">
+                                    <span class="sjmf-tit">网址</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="sr">
+                                    <span class="sjmf-tit">生日</span><span></span>
+                                </li>
+                                <li class="sjmf-utility tag" data-formType="bz">
+                                    <span class="sjmf-tit">备注</span><span></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--编辑组件-->
+                        <div class="sjmf-bjzj sjmfEditForm hide " id="edit">
+                            <p class="form_componentEdit_tips" style="display: block;">请先选择组件</p>
+                        </div>
+                    </div>
+
+                    <!--配色方案-->
+                    <div class="sjmf-psfa sjmfEditForm">
+                        <div class="style-pad" style="bottom: 60%;overflow: auto">
+                            <!-- <div class="sjmf-clolor-molder">
+                                <div class="color-show-block" style="background-color:#336699;color:#000000">
+                                    <div class="csb-title " style="background-color:#6699cc;color:#000000;">表单</div>
+                                    <div class="csb-contect " style="background-color:#FFFFFF;color:#000000;">
+                                        <p class="csb_stitle" style="background-color:#000000;color:#000000;"></p>
+                                        <p class="csb-des" style="background-color:#7C7C7C;color:#7C7C7C;"></p>
+                                        <p class="csb-highlight" style="background:#FFF8DC;color:#000000"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sjmf-clolor-molder">
+                                <div class="color-show-block" style="background-color:#336699;color:#000000">
+                                    <div class="csb-title " style="background-color:#6699cc;color:#000000;">表单</div>
+                                    <div class="csb-contect " style="background-color:#FFFFFF;color:#000000;">
+                                        <p class="csb_stitle" style="background-color:#000000;color:#000000;"></p>
+                                        <p class="csb-des" style="background-color:#7C7C7C;color:#7C7C7C;"></p>
+                                        <p class="csb-highlight" style="background:#FFF8DC;color:#000000"></p>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="style-design" style="height: 60%;overflow: hidden">
+                            <div class="style-design-pad">
+                                <span class="sdp_arrow">
+                                    <img src="../images/pulldownBlue.png" id="pad_up">
+                                 <img src="../images/pullupBlue.png" id="pad_down" style="display: none">
+                                </span>
+                                <span class="sdp_name">样式设置</span>
+                            </div>
+                            <span class="save_icon" data-target="#sjmfmodal" data-toggle="modal">&nbsp;</span>
+                            <div class="style-design-item">
+                                <div class="sdi-color clearfix">
+                                    <div class="sdi-block sdi-backgroundcolor">
+                                        <div class="in-title" >背景颜色</div>
+                                        <div class="in-color" id="bgColor01"><input type="hidden"></div>
+                                    </div>
+                                    <div class="sdi-block sdi-titlebackgroundcolor">
+                                        <div class="in-title">表头底色</div>
+                                        <div class="in-color" id="bgColor02"><input type="hidden"></div>
+                                    </div>
+                                    <div class="sdi-block sdi-font sdi-mainfontcolor">
+                                        <div class="in-title">题目文字</div>
+                                        <div class="in-color" id="fColor01">Aa<input type="hidden"></div>
+                                    </div>
+                                    <div class="sdi-block sdi-mainbackgroundcolor">
+                                        <div class="in-title">内容底色</div>
+                                        <div class="in-color" id="bgColor03"><input type="hidden"></div>
+                                    </div>
+                                    <div class="sdi-block sdi-font sdi-titlefontcolor">
+                                        <div class="in-title">表头文字</div>
+                                        <div class="in-color" id="fColor02">Aa<input type="hidden"></div>
+                                    </div>
+                                    <div class="sdi-block sdi-font sdi-desfontcolor">
+                                        <div class="in-title">描述文字</div>
+                                        <div class="in-color" id="fColor03">Aa<input type="hidden"></div>
+                                    </div>
+                                </div>
+                                <div class="sdi-image">
+                                    <!--页面背景图片-->
+                                    <div class="sdi-item sdi-backgroundImg">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input class="bg-checkbox" type="checkbox">页面背景图片
+                                            </label>
+                                        </div>
+                                        <div class="operation operation111 clearfix" style="display:none">
+                                            <div class=" upload_file form-control "><p>请选择一个文件</p>
+                                            <img src="../images/importFileAdd.png" id="choseBgImg">
+                                            <input type="file" name="img" id="" style="display:none">
+                                            </div>
+                                            <div class="btn-group btn-group-sm sdi-stateBtn">
+                                                <button type="button" class="btn btn-primary " id="p-left">居左</button>
+                                                <button type="button" class="btn btn-primary" id="p-center">居中</button>
+                                                <button type="button" class="btn btn-primary" id="p-right">居右</button>
+                                            </div>
+                                            <div class="pull-right">
+                                                <div class="checkbox m-t-o">
+                                                    <label><input type="checkbox" value="" id="page-bg-repeat">重复</label>
+                                                </div>
+                                                <div class="checkbox m-t-o">
+                                                    <label><input type="checkbox" value="">固定</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--表头背景图片-->
+                                    <div class="sdi-item sdi-backgroundImg">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" class="titbg-checkbox">表头背景图片
+                                            </label>
+                                        </div>
+                                        <div class="operation222 clearfix" style="display:none">
+                                            <div class=" upload_file form-control"><p>请选择一个文件</p><img
+                                                    src="../images/importFileAdd.png" id="choseTitleBgImg">
+                                                <input type="file" name="img" id="" style="display:none"></div>
+                                        </div>
+                                    </div>
+                                    <!--表头logo-->
+                                    <div class="sdi-item sdi-backgroundImg">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" class="logo-checkbox">表头LOGO
+                                            </label>
+                                        </div>
+                                        <div class="operation333 clearfix" style="display:none">
+                                            <div class=" upload_file form-control"><p>请选择一个文件</p><img
+                                                    src="../images/importFileAdd.png" id="choseLogBgImg">
+                                                <input type="file" name="img" id="" style="display:none"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sdi-contentstyle">
+                                    <div class="m-t-20 clearfix">
+                                        <span class="col-sm-4 ">表单宽度:</span>
+                                        <div class="col-sm-8">
+                                            <div class="btn-group btn-group-sm">
+                                                <button type="button" class="btn btn-default">较窄</button>
+                                                <button type="button" class="btn btn-primary">普通</button>
+                                                <button type="button" class="btn btn-default">较宽</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" m-t-20 clearfix">
+                                        <span class="col-sm-4 ">内容字号:</span>
+                                        <div class="col-sm-8">
+                                            <div class="btn-group btn-group-sm">
+                                                <button type="button" class="btn btn-default">较小</button>
+                                                <button type="button" class="btn btn-primary">中等</button>
+                                                <button type="button" class="btn btn-default">较大</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" m-t-20 clearfix">
+                                        <span class="col-sm-4 ">行间距:</span>
+                                        <div class="col-sm-8">
+                                            <div class="btn-group btn-group-sm">
+                                                <button type="button" class="btn btn-default">紧凑</button>
+                                                <button type="button" class="btn btn-primary">普通</button>
+                                                <button type="button" class="btn btn-default">宽松</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade creat-form-name" id="sjmfmodal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="height: 250px">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    保存表单样式
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="popwin_formTypeContent clearfix">
+                    <div class="" >
+                        <p class="sjmf-set-name-tips text-center">请给配色命名</p>
+                        <input class="form-control sjmf-theme-set-name" type="text" value="我的配色" placeholder="请输入配色名">
+
+                        <div class="btn-group-box m-t-20">
+                            <button type="button" class="btn btn-primary creat-form-btn" id="sjmf-theme-set-name">保存</button>
+                            <button type="button" class="btn btn-default cancel-form-btn">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="load"></div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/style.js"></script>
+<script src="../js/colpick.js"></script>
+<script src="../plugin/My97DatePicker/WdatePicker.js"></script>
+<script src="../plugin/My97DatePicker/lang/zh-cn.js"></script>
+<script src="../plugin/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../plugin/quse/js/colorpicker.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script>
+
+
+    var styleManager={
+        data:{
+            pageBgSrc:""
+        },
+        init:function(argument) {
+            var _this=this;
+               $('.in-color').each(function(index){
+                $(this).ColorPicker({
+                    color: '#0000ff',
+                    onShow: function (colpkr) {
+                        $(colpkr).fadeIn(500);
+                        return false;
+                    },
+                    onHide: function (colpkr) {
+                        $(colpkr).fadeOut(500);
+                        return false;
+                    },
+                    onChange: function (hsb, hex, rgb) {
+                        if(index==0){
+                            $('.in-color').eq(index).css("backgroundColor",'#' + hex);
+                            _this.changeBgcolor('#' + hex)
+                        }
+                        if(index==1){
+                            $('.in-color').eq(index).css("backgroundColor",'#' + hex);
+                            _this.changeTiTtlecolor('#' + hex)
+                        }
+                        if(index==2){
+                            $('.in-color').eq(index).css("color",'#' + hex);
+                            _this.changeLabelColor('#' + hex)
+                        }
+                        if(index==3){
+                            $('.in-color').eq(index).css("backgroundColor",'#' + hex);
+                            _this.changeConbgcolor('#' + hex)
+                        }
+                        if(index==4){
+                            $('.in-color').eq(index).css("color",'#' + hex);
+                            _this.changeTiTtleFontcolor('#' + hex)
+                        }
+                        if(index==5){
+                            $('.in-color').eq(index).css("color",'#' + hex);
+                            _this.changeDesColor('#' + hex)
+                        }
+                       
+                    }
+
+                })
+            })
+            this.event()
+        },
+        getUrl: function(oInput,fn) {
+                console.log(oInput)
+                oInput.trigger("click")
+
+                oInput.one("change",function(argument) {
+                    /*   var oMyForm = new FormData();*/
+                    var oFReader = new FileReader(), rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
+                    if (oInput[0].files.length === 0){ return; }
+                    var oFile = oInput[0].files[0];
+                    if (!rFilter.test(oFile.type)) { alert("你必须选择合法的图片格式!"); return; }
+                    if (!rFilter.test(oFile.type)) { alert("你必须选择合法的图片格式!"); return; }
+                    oFReader.readAsDataURL(oFile);
+
+                    oFReader.onload = function (oFREvent) {
+                        fn&&fn(oFREvent.target.result,oFile);
+                    };
+                })
+        },
+        changeBgcolor:function(color,self){
+            window.config.colorSet.bgColor=color;
+            $(".formBuilder-example").css("backgroundColor",color)
+
+        },
+        changeTiTtlecolor:function(color){
+            window.config.colorSet.headbgcolor=color;
+            $(".sjmf-form-title").css("backgroundColor",color)
+        },
+        changeLabelColor:function(color){
+            window.config.colorSet.labelcolor=color;
+            $('#main').find('.like_li .title').css("color",color)
+        },
+        changeConbgcolor:function(color){
+            window.config.colorSet.conbgcolor=color;
+            $('#main').css("backgroundColor",color)
+        },
+        changeTiTtleFontcolor:function(color){
+            window.config.colorSet.headcolor=color;
+            $(".sjmf-form-title").find('h2').css("color",color)
+        },
+        changeDesColor:function(color){
+            window.config.colorSet.descolor=color;
+            $('#main').find('.like_li .desc').css("color",color)
+        },
+        choseBgImg:function(argument) {
+            var _this=this;
+            var name=$("#choseBgImg").prev("p")
+            var input=$("#choseBgImg").next("input")
+            this.getUrl(input,function (src,oInput) {
+                 _this.data.pageBgSrc=src//将属性存起来  下次用
+                 $(".formBuilder-example").css({
+                    "backgroundImage":"url("+src+")",
+                    "backgroundRepeat":"no-repeat"
+                    })
+                 name.html(oInput.name)
+            })
+        },
+        choseTitleBgImg:function(argument) {
+            var _this=this;
+            var name=$("#choseTitleBgImg").prev("p")
+            var input=$("#choseTitleBgImg").next("input")
+            this.getUrl(input,function (src,oInput) {
+                _this.data.titleBgSrc=src//将属性存起来  下次用
+                $(".sjmf-form-title").css({
+                    "backgroundImage":"url("+src+")",
+                    "backgroundRepeat":"no-repeat"
+                })
+                name.html(oInput.name)
+            })
+        },
+        choseLogBgImg:function(argument) {
+            var _this=this;
+            var name=$("#choseLogBgImg").prev("p")
+            var input=$("#choseLogBgImg").next("input")
+            this.getUrl(input,function (src,oInput) {
+                _this.data.choseLogBgImg=src//将属性存起来  下次用
+                $(".formLogo").css({
+                    "backgroundImage":"url("+src+")",
+                    "backgroundRepeat":"no-repeat"
+                })
+                /**/
+                name.html(oInput.name)
+            })
+        },
+
+        event:function(argument) {
+            var _this=this;
+            $(".bg-checkbox").on("click",function(event) {
+                var checked=$(this).is(':checked')
+                if(checked){
+                    $(".operation111").show()
+                    $(".formBuilder-example").css("backgroundImage","url("+_this.data.pageBgSrc+")")
+                }else{
+                    $(".operation111").hide()
+                    $(".formBuilder-example").css("backgroundImage","")
+
+                }
+            })
+            $(".titbg-checkbox").on("click",function(event) {
+                var checked=$(this).is(':checked')
+                if(checked){
+                    $(".operation222").show()
+                    $(".sjmf-form-title").css("backgroundImage","url("+_this.data.titleBgSrc+")")
+                }else{
+                    $(".operation222").hide()
+                    $(".sjmf-form-title").css("backgroundImage","")
+
+                }
+            });
+            $(".logo-checkbox").on("click",function(event) {
+                var checked=$(this).is(':checked')
+                if(checked){
+                    $(".operation333").show()
+                    $(".formLogo").css("backgroundImage","url("+_this.data.choseLogBgImg+")")
+                }else{
+                    $(".operation333").hide()
+                    $(".formLogo").css("backgroundImage","")
+
+                }
+            });
+            $("#choseBgImg").on("click",function (argument) {
+               _this.choseBgImg()
+            })
+            $("#choseLogBgImg").on("click",function (argument) {
+               _this.choseLogBgImg()
+            })
+             $("#page-bg-repeat").on("click",function(event) {
+                var checked=$(this).is(':checked')
+                if(checked){
+                    $(".formBuilder-example").css("backgroundRepeat","repeat")
+                }else{
+                    $(".formBuilder-example").css("backgroundRepeat","no-repeat")
+
+                }
+            })
+            $('#p-left').on('click',function(){
+                $(".formBuilder-example").css("backgroundPosition","left")
+            })
+            $('#p-center').on('click',function(){
+                $(".formBuilder-example").css("backgroundPosition","center")
+            })
+            $('#p-right').on('click',function(){
+                $(".formBuilder-example").css("backgroundPosition","right")
+            })
+
+            $("#choseTitleBgImg").on("click",function (argument) {
+                _this.choseTitleBgImg()
+            })
+        }
+
+    }
+
+styleManager.init()
+
+</script>
+<script>
+    $(function(){
+        var _http="http://120.76.138.42:8099";
+
+        /*获取配色*/
+        $.ajax({
+            type: 'POST',
+            url:_http+'/form.php/index/gettheme/',
+            success: function(data){
+                var paditem="";/*style-pad*/
+                for(var i=0;i<data.length;i++){
+                    data[i].theme=JSON.parse(data[i].theme);
+                    var _allTheme =data[i].theme.bgcolor+','+data[i].theme.conbgcolor+','+data[i].theme.descolor+','+data[i].theme.headbgcolor+','+data[i].theme.headcolor+','+data[i].theme.labelcolor+','+data[i].theme.formwidth+','+data[i].theme.labelsize+','+data[i].theme.itempadding;
+                    paditem+='<div class="sjmf-clolor-molder" data-id="'+data[i].theme_id+'" data-theme="'+_allTheme+'">'
+                            +'<div class="color-show-block" style="background-color:'+data[i].theme.bgcolor+'">'
+                            +'<div class="csb-title" style="background-color:'+data[i].theme.headbgcolor+';color:'+data[i].theme.headcolor+'">'+data[i].name+'</div>'
+                            +'<div class="csb-contect" style="background-color:'+data[i].theme.conbgcolor+'">'
+                            +'<p class="csb_stitle" style="background-color:#000000;color:'+data[i].theme.labelcolor+'"></p>'
+                            +'<p class="csb-des" style="background-color:'+data[i].theme.descolor+';color:'+data[i].theme.descolor+'"></p>'
+                            +'<p class="csb-highlight"></p>'
+                            +'</div>'
+                            +'</div>'
+                            +'</div>';
+                }
+                $('.style-pad').html(paditem);
+            },
+            dataType: "json"
+        })
+
+        /*点击配色方案块，修改编辑区域配色 存储配色方案到config里*/
+        $(document).on('click','.sjmf-clolor-molder',function(){
+            var _dataTheme = $(this).attr("data-theme");
+            var _theme =[];
+            _theme =  _dataTheme.split(",");//_theme 顺序依次为 bgcolor，conbgcolor，descolor，headbgcolor，headcolor，，labelcolor，formwidth，labelsize，itempadding
+            window.config.colorSet.bgcolor =_theme[0];
+            $(".formBuilder-example").css("backgroundColor",_theme[0])
+            window.config.colorSet.conbgcolor =_theme[1];
+            $('#main').css("backgroundColor",_theme[1])
+            window.config.colorSet.descolor =_theme[2];
+            $('#main').find('.like_li .desc').css("color",_theme[2])
+            window.config.colorSet.headbgcolor =_theme[3];
+            $(".sjmf-form-title").css("backgroundColor",_theme[3])
+            window.config.colorSet.headcolor =_theme[4];
+            $(".sjmf-form-title").find('h2').css("color",_theme[4])
+            window.config.colorSet.labelcolor =_theme[5];
+            $('#main').find('.like_li .title').css("color",_theme[5]);
+
+            window.config.colorSet.formwidth =_theme[6];
+
+            window.config.colorSet.labelsize =_theme[7];
+
+            window.config.colorSet.itempadding =_theme[8];
+        })
+        /*点击保存配色方案*/
+        $(document).on('click','#sjmf-theme-set-name',function(){
+            param= window.config.colorSet;
+            param.name=$('.sjmf-theme-set-name').val();
+
+            $.ajax({
+                type: 'POST',
+                url: _http+'/form.php/index/addtheme/',
+                data: {"data":param},
+                success: function(data){
+                    console.log(data)
+                    console.log(param);
+                    var _allTheme=param.bgcolor+','+param.conbgcolor+','+param.descolor+','+param.headbgcolor+','+param.headcolor+','+param.labelcolor+','+param.formwidth+','+param.labelsize+','+param.itempadding;
+                    var _newPaditem='<div class="sjmf-clolor-molder" data-id="'+data.themeid+'" data-theme="'+_allTheme+'">'
+                            +'<div class="color-show-block" style="background-color:'+param.bgcolor+'">'
+                            +'<div class="csb-title" style="background-color:'+param.headbgcolor+';color:'+param.headcolor+'">'+param.name+'</div>'
+                            +'<div class="csb-contect" style="background-color:'+param.conbgcolor+'">'
+                            +'<p class="csb_stitle" style="background-color:#000000;color:'+param.labelcolor+'"></p>'
+                            +'<p class="csb-des" style="background-color:'+param.descolor+';color:'+param.descolor+'"></p>'
+                            +'<p class="csb-highlight"></p>'
+                            +'</div>'
+                            +'</div>'
+                            +'</div>';
+                    $('.style-pad').children().eq(0).before(_newPaditem);
+                },
+                dataType: "json"
+            });
+        })
+    })
+
+
+/**************************************表单设置*****************************************/
+
+
+;(function (argument) {
+         $("#form-title").anysc(function(value) {
+              console.log(value)
+                        $(".title>h2").html(value)
+                })    
+         $("#form-desc").anysc(function(value) {
+                      $(".main-form-desc").html(value)
+                })
+         $(".checkbox").on("click",function () {
+               var isChecked=$(this).find("input").is(":checked")
+               if(isChecked){
+                    $(this).next(".sjmf-bd-fanki").show()
+               }else{
+                      $(this).next(".sjmf-bd-fanki").hide()
+               }
+         })
+})();
+</script>
+</body>
+</html>

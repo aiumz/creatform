@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div class="temple" style="display:none">
+    <div defultEdit>
+        <div>
+
+            <ul>
+                <li>
+                    <div class="form-group">
+                        <label>标题</label>
+                        <input type="text" class="form-control title"
+                               placeholder="请输入名称" value=""></div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>描述文字</label>
+                        <span class="form_edit_addLink addLink">添加链接</span>
+                        <textarea class="form-control desc" rows="3"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <label>必填设置</label>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" class="isRequired">这是个必填项</label>
+                    </div>
+
+                </li>
+                <li>
+                    <label>组件大小</label>
+                    <div>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input class="el-sm" type="radio" name="zjsize" value="option1">小尺寸</label>
+                        <label class="checkbox-inline">
+                            <input class="el-md" type="radio" name="zjsize" value="option2">标准尺寸</label>
+                        <label class="checkbox-inline">
+                            <input class="el-mx" type="radio" name="zjsize" value="option2">大尺寸</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 单行文本 -->
+    <div main="1">
+        <div class="like_li">
+
+            <span class="delete-li el-remove">x</span>
+            <div class="form-group">
+                <label>
+                    <span class="title">单行文本</span>
+                    <span class="com-required" style="display: none;">*</span>
+                </label>
+                <p class="desc"></p>
+                <input type="text" class="form-control" readonly>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下拉菜单 -->
+    <div main="2">
+        <div class="like_li">
+            <span class="delete-li el-remove">x</span>
+            <div class="form-group">
+                <label>
+                    <span  class="title">下拉菜单</span>
+                    <span class="com-required" style="display: none;">*</span>
+                </label>
+                <p class="desc"></p>
+                <select class="form-control "></select>
+            </div>
+        </div>
+    </div>
+    <div edit="2">
+        <div>
+
+
+            <ul>
+                <li>
+                    <div class="form-group">
+                        <label>标题</label>
+                        <input type="text" class="form-control title"
+                               placeholder="请输入名称" value=""></div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>描述文字</label>
+                        <span class="form_edit_addLink addLink">添加链接</span>
+                        <textarea class="form-control desc" rows="3"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <label>必填设置</label>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" class="isRequired">这是个必填项</label>
+                    </div>
+                </li>
+                <li>
+                    <label>选项设置</label>
+                    <div class="labelList"></div>
+                    <div class="checkbox-inline p-l-0 radio m-l-0 m-t-20">
+                        <input type="text " class="input_textarea" disabled value="添加其他选项">
+                        <div class="other_option">
+                            <span>其他：</span>
+                            <textarea class="edittext textarea input_textarea"></textarea>
+                            <span class="delete-radio"></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 图片 -->
+    <div main="3">
+        <div class="like_li">
+
+            <span class="delete-li el-remove">x</span>
+            <div class="form-group" style="width: 100%">
+                <label>图片</label>
+                <div class="sp-img imgWrap imgLink">
+                    <img style="width: 33.333%" src="../images/formDefaultPicture.png"/>
+                </div>
+                <div class="img-descript textWrap">
+                    <span class=" desc">这里是图片,写下你对它的描述</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div edit="3">
+        <div>
+
+            <ul>
+                <li>
+                    <div class="form-group">
+                        <label>描述文字</label>
+                        <span class="form_edit_addLink addLink">添加链接</span>
+                        <textarea class="form-control desc" rows="3"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <label>描述文字对齐方式</label>
+                    <div>
+                        <label class="checkbox-inline p-l-0 radio el-left">
+                            <input type="radio" name="btalign " value="option1">左对齐</label>
+                        <label class="checkbox-inline p-l-0 radio el-center">
+                            <input type="radio" name="btalign" value="option2">居中对齐</label>
+                        <label class="checkbox-inline p-l-0 radio el-right">
+                            <input type="radio" name="btalign" value="option3">右对齐</label>
+                    </div>
+                </li>
+                <li>
+                    <label>标题对齐方式</label>
+                    <div>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="imgaddress" value="option1">本地上传</label>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="imgaddress" value="option2">外链图片</label>
+                        <div class=" upload_file form-control ">
+                            <p class="imgName">请选择一个文件</p>
+                            <img src="../images/importFileAdd.png" class="el-choseImg">
+                            <input type="file" name="img" style="display:none">
+                        </div>
+                        <input type="text" class="form-control" placeholder="点击enter确定"></div>
+                </li>
+                <li>
+                    <label>图片显示方式</label>
+                    <div>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="imshowstyle" value="option1" class="el-img-width">拉伸</label>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="imshowstyle" value="option2" class="el-img-center">居中</label>
+                    </div>
+                </li>
+                <li>
+                    <label>图片点击链接</label>
+                    <input type="text" class="form-control setImgLink" placeholder="设置填表人点击图片后的跳转链接"></li>
+            </ul>
+        </div>
+    </div>
+    <!--  数字 -->
+    <div main="4">
+        <div class="like_li">
+
+            <span class="delete-li el-remove">x</span>
+            <div class="form-group">
+                <label>
+                    <span class="title">数字</span>
+                    <span class="com-required" style="display: none;">*</span>
+                </label>
+                <p class="desc"></p>
+                <input type="number" class="form-control" readonly></div>
+        </div>
+    </div>
+
+    <!-- 多行文本 -->
+    <div main="5">
+        <div class="like_li">
+
+            <span class="delete-li el-remove">x</span>
+            <div class="form-group">
+                <label>
+                    <span class="title">多行文本</span>
+                    <span class="com-required" style="display: none;">*</span>
+                </label>
+                <p class="desc"></p>
+                <textarea class="form-control" rows="3" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!--  单选 -->
+    <div main="6">
+        <div class="like_li">
+
+            <span class="delete-li el-remove">x</span>
+            <label>
+                <span class="title">单选</span>
+                <span class="com-required" style="display: none;">*</span>
+            </label>
+            <p class="desc"></p>
+           <div class="labelList"></div>
+        </div>
+    </div>
+    <div edit="6">
+        <div>
+
+            <ul>
+                <li>
+                    <div class="form-group">
+                        <label>标题</label>
+                        <input type="text" class="form-control title"
+                               placeholder="请输入名称" value=""></div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>描述文字</label>
+                        <span class="form_edit_addLink">添加链接</span>
+                        <textarea class="form-control desc" rows="3"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <label>必填设置</label>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" class="isRequired">这是个必填项</label>
+                    </div>
+
+                </li>
+                <li>
+                    <label>选项设置</label>
+                     <div class="labelList"></div>
+                </li>
+                <li class="m-t-20">
+                    <label>分列排版</label>
+                    <div>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="fltype" value="option1" class="radioSize">单列</label>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="fltype" value="option2" class="radioSize">两列</label>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="fltype" value="option3" class="radioSize">三列</label>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="fltype" value="option4" class="radioSize">四列</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!--
+            多选 -->
+    <div main="7">
+        <div class="like_li">
+
+            <span class="delete-li el-remove">x</span>
+            <label>
+               <span class="title"> 多选</span>
+                <span class="com-required" style="display: none;">*</span>
+            </label>
+            <p class="desc"></p>
+           <div class="labelList">
+               
+           </div>
+        </div>
+    </div>
+    <div edit="7">
+        <div>
+
+            <ul>
+                <li>
+                    <div class="form-group">
+                        <label>标题</label>
+                        <input type="text" class="form-control title"
+                               placeholder="请输入名称" value=""></div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>描述文字</label>
+                        <span class="form_edit_addLink">添加链接</span>
+                        <textarea class="form-control desc" rows="3"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <label>必填设置</label>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" class="isRequired">这是个必填项</label>
+                    </div>
+
+                </li>
+                <li>
+                    <label>选项设置</label>
+                    <div class="labelList">
+                       
+                    </div>
+                </li>
+                <li class="m-t-20">
+                    <label>分列排版</label>
+                    <div>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="fltype" value="1">单列</label>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="fltype" value="2">两列</label>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="fltype" value="3">三列</label>
+                        <label class="checkbox-inline p-l-0 radio">
+                            <input type="radio" name="fltype" value="4">四列</label>
+                    </div>
+                </li>
+                <li class="m-t-20">
+                    <label>选项控制</label>
+                    <div>
+                        <input type="checkbox" value="">
+                        <select class="select-number-type form-control">
+                            <option value="0" selected="selected">至少</option>
+                            <option value="1">最多</option>
+                            <option value="2">恰好</option>
+                        </select>
+                        <span>选择</span>
+                        <input class="edit-select-number form-control" type="text" value="">
+                        <span>选择</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--     图片多选 -->
+    <div main="9">
+        <div class="like_li">
+
+            <span class="delete-li el-remove">x</span>
+            <label>
+                <span class="title">图片多选</span>
+                <span class="com-required" style="display: none;">*</span>
+            </label>
+            <p class="desc"></p>
+            <ul class="clearfix p-l-0 radio labelList">
+                <!--  <li class="img-checkbox">
+                    <div class="img-box"></div>
+                    <label class="checkbox-inline ">
+                        <input type="checkbox" value="option1" disabled>选项 1</label>
+                </li>
+                <li class="img-checkbox">
+                    <div class="img-box"></div>
+                    <label class="checkbox-inline ">
+                        <input type="checkbox" value="option1" disabled>选项 2</label>
+                </li>
+                <li class="img-checkbox">
+                    <div class="img-box"></div>
+                    <label class="checkbox-inline ">
+                        <input type="checkbox" value="option1" disabled>选项 3</label>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <div edit="9">
+        <div>
+            <ul>
+                <li>
+                    <div class="form-group">
+                        <label>标题</label>
+                        <input type="text" class="form-control title"
+                               placeholder="请输入名称" value=""></div>
+                </li>
+                <li>
+                    <div class="form-group">
+                        <label>描述文字</label>
+                        <span class="form_edit_addLink">添加链接</span>
+                        <textarea class="form-control desc" rows="3"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <label>必填设置</label>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" class="isRequired">这是个必填项</label>
+                    </div>
+
+                </li>
+                <li>
+                    <label>选项设置</label>
+                    <div class="labelList">
+                        <!-- <label class="checkbox-inline">
+                            <input type="checkbox" value="">
+                            <div class="imgcontect">
+                                <span class="upload_btn">
+                                    上传图片
+                                    <br>(限2MB)</span>
+                            </div>
+                            <textarea class="edittext textarea input_textarea width-110">选项1</textarea>
+                            <span class="delete-radio"></span>
+                        </label>
+                        <label class="checkbox-inline  m-l-0 m-t-20">
+                            <input type="checkbox" value="">
+                            <div class="imgcontect">
+                                <span class="upload_btn">
+                                    上传图片
+                                    <br>(限2MB)</span>
+                            </div>
+                            <textarea class="edittext textarea input_textarea width-110">选项2</textarea>
+                            <span class="delete-radio"></span>
+                        </label>
+                        <label class="checkbox-inline m-l-0 m-t-20">
+                            <input type="checkbox" value="">
+                            <div class="imgcontect">
+                                <span class="upload_btn">
+                                    上传图片
+                                    <br>(限2MB)</span>
+                            </div>
+                            <textarea class="edittext textarea input_textarea width-110">选项3</textarea>
+                            <span class="delete-radio"></span>
+                            <span class="add-radio"></span>
+                        </label> -->
+                    </div>
+                </li>
+                <li class="m-t-20">
+                    <label>选项控制</label>
+                    <div>
+                        <input type="checkbox" value="">
+                        <select class="select-number-type form-control">
+                            <option value="0" selected="selected">至少</option>
+                            <option value="1">最多</option>
+                            <option value="2">恰好</option>
+                        </select>
+                        <span>选择</span>
+                        <input class="edit-select-number form-control" type="text" value="">
+                        <span>选择</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--   图片单选 -->
+    <div main="8">
+        <div class="like_li">
+            <span class="delete-li el-remove">x</span>
+            <label>
+                <span class="title">图片单选</span>
+                <span class="com-required" style="display: none;">*</span>
+            </label>
+            <p class="desc"></p>
+            <ul class="clearfix p-l-0 radio labelList">
+
+            </ul>
+        </div>
+    </div>
+    <div edit="8">
+        <ul>
+            <li>
+                <div class="form-group">
+                    <label>标题</label>
+                    <input type="text" class="form-control title"
+                           placeholder="请输入名称" value=""></div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label>描述文字</label>
+                    <span class="form_edit_addLink">添加链接</span>
+                    <textarea class="form-control desc" rows="3"></textarea>
+                </div>
+            </li>
+            <li>
+                <label>必填设置</label>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="" class="isRequired">这是个必填项</label>
+                </div>
+
+            </li>
+            <li>
+                <label>选项设置</label>
+                <div class="labelList">
+                    <!--  <label class="checkbox-inline">
+                        <input type="checkbox" value="">
+                        <div class="imgcontect">
+                            <span class="upload_btn">
+                                上传图片
+                                <br>(限2MB)</span>
+                        </div>
+                        <textarea class="edittext textarea input_textarea width-110">选项1</textarea>
+                        <span class="delete-radio"></span>
+                    </label>
+                    <label class="checkbox-inline  m-l-0 m-t-20">
+                        <input type="checkbox" value="">
+                        <div class="imgcontect">
+                            <span class="upload_btn">
+                                上传图片
+                                <br>(限2MB)</span>
+                        </div>
+                        <textarea class="edittext textarea input_textarea width-110">选项2</textarea>
+                        <span class="delete-radio"></span>
+                    </label>
+                    <label class="checkbox-inline m-l-0 m-t-20">
+                        <input type="checkbox" value="">
+                        <div class="imgcontect">
+                            <span class="upload_btn">
+                                上传图片
+                                <br>(限2MB)</span>
+                        </div>
+                        <textarea class="edittext textarea input_textarea width-110">选项3</textarea>
+                        <span class="delete-radio"></span>
+                        <span class="add-radio"></span>
+                    </label> -->
+                </div>
+            </li>
+            <li class="m-t-20">
+                <label>选项控制</label>
+                <div>
+                    <input type="checkbox" value="">
+                    <select class="select-number-type form-control">
+                        <option value="0" selected="selected">至少</option>
+                        <option value="1">最多</option>
+                        <option value="2">恰好</option>
+                    </select>
+                    <span>选择</span>
+                    <input class="edit-select-number form-control" type="text" value="">
+                    <span>选择</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!--   日期 -->
+    <div main="10">
+        <div class="like_li">
+            <span class="delete-li el-remove">x</span>
+            <div class="form-group">
+                <label>
+                    <span class="title">日期</span>
+                    <span class="com-required" style="display: none;">*</span>
+                </label>
+                <p class="desc"></p>
+                <input type="text" class="form-control" disabled onfocus="WdatePicker()"></div>
+        </div>
+    </div>
+    <div edit="10">
+        <ul>
+            <li>
+                <div class="form-group">
+                    <label>标题</label>
+                    <input type="text" class="form-control title"
+                           placeholder="请输入名称" value=""></div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label>描述文字</label>
+                    <span class="form_edit_addLink">添加链接</span>
+                    <textarea class="form-control desc" rows="3"></textarea>
+                </div>
+            </li>
+            <li>
+                <label>必填设置</label>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="" class="isRequired">这是个必填项</label>
+                </div>
+
+            </li>
+            <li>
+                <label>日期格式</label>
+                <div>
+                    <label class="checkbox-inline p-l-0 radio dateymd">
+                        <input type="radio" name="zjsize" value="option1">年-月-日</label>
+                    <label class="checkbox-inline dateym">
+                        <input type="radio" name="zjsize" value="option2">年-月</label>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!--   附件 -->
+    <div main="11">
+        <div class="like_li">
+            <span class="delete-li el-remove">x</span>
+            <div class="form-group">
+                <label class="title">附件</label>
+                <p class="desc"></p>
+                <div class=" upload_file form-control">
+                    <p>请选择一个文件</p>
+                    <img src="../images/importFileAdd.png"></div>
+            </div>
+        </div>
+    </div>
+    <div edit="11">
+        <ul>
+            <li>
+                <div class="form-group">
+                    <label>标题</label>
+                    <input type="text" class="form-control title"
+                           placeholder="请输入名称" value=""></div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label>描述文字</label>
+                    <span class="form_edit_addLink">添加链接</span>
+                    <textarea class="form-control desc" rows="3"></textarea>
+                </div>
+            </li>
+            <li>
+                <label>必填设置</label>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="" class="isRequired">这是个必填项</label>
+                </div>
+
+            </li>
+            <li>
+                <label>文件上传类型</label>
+                <div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">限制文件上传类型</label>
+                    </div>
+                    <div class="limit-set-detail" style="display: block;">
+                        <ul class="type_select">
+                            <li class="type_select_item">
+                                <div class="type_select_field">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                      <span
+                                              class="label-pan">文档</span>
+                                    </label>
+                                    <span class="type_des">全部</span>
+                                    <span class="type_select_expand">展开详细</span>
+                                    <ul class="clearfix">
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">txt</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">doc/docx</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">xls/xlsx</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">ppt/pptx</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">html/htm</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">pdf</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="type_select_item">
+                                <div class="type_select_field">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                      <span
+                                              class="label-pan">视频</span>
+                                    </label>
+                                    <span class="type_des">全部</span>
+                                    <span class="type_select_expand">展开详细</span>
+                                    <ul class="clearfix">
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">avi</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">swf</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">wmv</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">rmvb</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">mp4</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">3gp</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">mov</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="type_select_item">
+                                <div class="type_select_field">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                      <span
+                                              class="label-pan">音频</span>
+                                    </label>
+                                    <span class="type_des">全部</span>
+                                    <span class="type_select_expand">展开详细</span>
+                                    <ul class="clearfix">
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">mp3</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">m4a</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">wma</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="type_select_item">
+                                <div class="type_select_field">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                      <span
+                                              class="label-pan">其他</span>
+                                    </label>
+                                    <span class="type_des">全部</span>
+                                    <span class="type_select_expand">展开详细</span>
+                                    <ul class="clearfix">
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">rar</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">zip</span>
+                                            </label>
+                                        </li>
+                                        <li class="type_select_detail_item">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                              <span
+                                                      class="label-pan">7z</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!--   评分 -->
+    <div main="12">
+        <div class="like_li">
+            <span class="delete-li el-remove">x</span>
+            <div class="form-group">
+                <label class="title">评分</label>
+                <p class="desc"></p>
+                <ul class="pingfenimgbox clearfix p-l-0 radio starWrap">
+                    <!--            <li class="pingfenimg">
+                        <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }  ]]></style></defs><g class="transform-group"><g transform="scale(0.125, 0.125)"><path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path></g></g></svg>
+                    </li>
+                    <li class="pingfenimg">
+                        <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }  ]]></style></defs><g class="transform-group"><g transform="scale(0.125, 0.125)"><path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path></g></g></svg>
+                    </li>
+                    <li class="pingfenimg">
+                        <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }  ]]></style></defs><g class="transform-group"><g transform="scale(0.125, 0.125)"><path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path></g></g></svg>
+                    </li>
+                    <li class="pingfenimg">
+                        <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }  ]]></style></defs><g class="transform-group"><g transform="scale(0.125, 0.125)"><path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path></g></g></svg>
+                    </li>
+                    <li class="pingfenimg">
+                        <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }  ]]></style></defs><g class="transform-group"><g transform="scale(0.125, 0.125)"><path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#cecece"></path></g></g></svg>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div edit="12">
+        <ul>
+            <li>
+                <div class="form-group">
+                    <label>标题</label>
+                    <input type="text" class="form-control title"
+                           placeholder="请输入名称" value=""></div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label>描述文字</label>
+                    <span class="form_edit_addLink">添加链接</span>
+                    <textarea class="form-control desc" rows="3"></textarea>
+                </div>
+            </li>
+            <li>
+                <label>必填设置</label>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="" class="isRequired">这是个必填项</label>
+                </div>
+
+            </li>
+            <li>
+                <label>评分最大值</label>
+                <select class="form-control starNum">
+                    <option value="3">3颗</option>
+                    <option value="4">4颗</option>
+                    <option value="5">5颗</option>
+                    <option value="6">6颗</option>
+                    <option value="7">7颗</option>
+                    <option value="8">8颗</option>
+                    <option value="9">9颗</option>
+                    <option value="10">10颗</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+
+    <!--   商品 -->
+    <div main="13">
+        <div class="like_li">
+            <span class="delete-li el-remove">x</span>
+            <div class="form-group">
+                <label class="title">商品</label>
+                <p class="desc"></p>
+                <ul class="sjmf-sp clearfix productWrap">
+                    <li class="sp-item empty-sp">暂无商品</li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div edit="13">
+        <ul>
+            <li>
+                <div class="form-group">
+                    <label>标题</label>
+                    <input type="text" class="form-control title"
+                           placeholder="请输入名称" value=""></div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label>描述文字</label>
+                    <span class="form_edit_addLink">添加链接</span>
+                    <textarea class="form-control desc" rows="3"></textarea>
+                </div>
+            </li>
+            <li>
+                <label>必填设置</label>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="" class="isRequired">这是个必填项</label>
+                </div>
+
+            </li>
+            <li>
+                <label>商品项目</label>
+                <ul class="productWrap">
+
+
+                </ul>
+                <div class="addShopping_item addItem">
+                    <div class="add_shopping_item">+</div>
+                </div>
+
+
+            </li>
+        </ul>
+    </div>
+
+
+    <!--   分割线 -->
+    <div main="14">
+        <div class="like_li">
+            <span class="delete-li el-remove">x</span>
+            <label class="title">分割线</label>
+            <p class="desc"></p>
+            <hr class="sjmf-hr"/>
+            <div class="hr-descript">写下你对它的描述</div>
+        </div>
+    </div>
+    <div edit="14">
+        <ul>
+            <li>
+                <div class="form-group">
+                    <label>标题</label>
+                    <input type="text" class="form-control title"
+                           placeholder="请输入名称" value=""></div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label>描述文字</label>
+                    <span class="form_edit_addLink">添加链接</span>
+                    <textarea class="form-control desc" rows="3"></textarea>
+                </div>
+            </li>
+            <li>
+                <label>标题对其方式</label>
+                <div>
+                    <label class="checkbox-inline p-l-0 radio">
+                        <input type="radio" name="btdq" value="option1">左对齐</label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="btdq" value="option2">居中对齐</label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="btdq" value="option3">右对齐</label>
+                </div>
+            </li>
+            <li>
+                <label>描述文字对齐方式</label>
+                <div>
+                    <label class="checkbox-inline p-l-0 radio">
+                        <input type="radio" name="mswzdq" value="option1">左对齐</label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="mswzdq" value="option2">居中对齐</label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="mswzdq" value="option3">右对齐</label>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!--   翻页 -->
+    <div main="15">
+        <div class="like_li">
+            <span class="delete-li el-remove">x</span>
+            <div class="ui-draggable">
+                <div class="page-pre pagePre">第 1 页</div>
+                <div class="page">
+                    <div class="same-as-break break-color"></div>
+                </div>
+                <div class="page-next pageNext">第 2 页</div>
+            </div>
+        </div>
+    </div>
+    <div edit="15">
+        <label>表单分页设置</label>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="">禁止返回上一页</label>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建表单</title>
+    <!--<link href="../plugin/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>-->
+    <link href="../plugin/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../plugin/My97DatePicker/skin/WdatePicker.css" rel="stylesheet"/>
+    <link href="../theme/style.css" rel="stylesheet"/>
+    <link href="../theme/view-form.css" rel="stylesheet"/>
+    <link href="../theme/colpick.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="fp-operate">
+    <div class="fp-operateBtn">
+        <a class="btn btn-default btn-sm pull-left" href="index.html" style="margin-top: 3px">返回列表</a>
+        <a class="btn btn-default btn-sm pull-right" href="editForm.html" style="margin-top: 3px">编辑表单</a>
+    </div>
+</div>
+<div class="f-wrapper fs-wrapper">
+    <div class="fs-main view-form">
+        <div class="f-body">
+            <div class="sjmf-form-title clearfix text-center">
+                <div class="formLogo"></div>
+                <div class="title"><h2>fgfjfjh</h2>
+                </div>
+            </div>
+            <div class="form-component ui-sortable">
+                <div class="like_li" style="width: 100%;">
+                    <div class="form-group">
+                        <label>单行文本<span class="com-required">*</span></label>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <div class="form-group">
+                        <label>数字<span class="com-required">*</span></label>
+                        <input type="number" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <div class="form-group">
+                        <label>多行文本<span class="com-required">*</span></label>
+                        <textarea class="form-control" rows="3" readonly></textarea>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <div class="form-group">
+                        <label>下拉菜单<span class="com-required">*</span></label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <label>单选<span class="com-required">*</span></label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" value="option1">选项 1
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" value="option2">选项 2
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" value="option2">选项 3
+                        </label>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <label>多选<span class="com-required">*</span></label>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">选项 1
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">选项 2
+                        </label>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <label>图片多选<span class="com-required">*</span></label>
+                    <ul class="clearfix p-l-0">
+                        <li class="img-checkbox">
+                            <div class="img-box"></div>
+                            <label class="checkbox-inline ">
+                                <input type="checkbox" value="option1">选项 1
+                            </label>
+                        </li>
+                        <li class="img-checkbox">
+                            <div class="img-box"></div>
+                            <label class="checkbox-inline ">
+                                <input type="checkbox" value="option1">选项 2
+                            </label>
+                        </li>
+                        <li class="img-checkbox">
+                            <div class="img-box"></div>
+                            <label class="checkbox-inline ">
+                                <input type="checkbox" value="option1">选项 3
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <label>图片单选<span class="com-required">*</span></label>
+                    <ul class="clearfix p-l-0">
+                        <li class="img-radio">
+                            <div class="img-box"></div>
+                            <label class="checkbox-inline">
+                                <input type="radio" name="optionsRadiosinline" value="option1"
+                                       class="img-radio-option">选项 1
+                            </label>
+                        </li>
+                        <li class="img-radio">
+                            <div class="img-box"></div>
+                            <label class="checkbox-inline">
+                                <input type="radio" name="optionsRadiosinline" value="option1"
+                                       class="img-radio-option">选项 2
+                            </label>
+                        </li>
+                        <li class="img-radio">
+                            <div class="img-box"></div>
+                            <label class="checkbox-inline">
+                                <input type="radio" name="optionsRadiosinline" value="option1"
+                                       class="img-radio-option">选项 3
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <div class="form-group">
+                        <label>日期<span class="com-required">*</span></label>
+                        <input type="text" class="form-control" onfocus="WdatePicker()">
+                    </div>
+
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <div class="form-group">
+                        <label>附件</label>
+                        <div class=" upload_file form-control">
+                            <p>请选择一个文件</p><img src="../images/importFileAdd.png" id="choseFile">
+
+                            <input type="file" name="img"  style="display: none">
+                        </div>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <div class="form-group">
+                        <label>评分</label>
+                        <div id="readOnly-demo"></div>
+
+                    </div>
+                    <ul class="pingfenimgbox clearfix p-l-0 starWrap" data-len="10">
+  <li class="pingfenimg satrContent">
+    <span style="display:none">
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+    <span>
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#cecece"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+  </li>
+  <li class="pingfenimg satrContent">
+    <span style="display:none">
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+    <span>
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#cecece"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+  </li>
+  <li class="pingfenimg satrContent">
+    <span style="display:none">
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+    <span>
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#cecece"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+  </li>
+  <li class="pingfenimg satrContent">
+    <span style="display:none">
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+    <span>
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#cecece"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+  </li>
+  <li class="pingfenimg satrContent">
+    <span style="display:none">
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+    <span>
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#cecece"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+  </li>
+  <li class="pingfenimg satrContent">
+    <span style="display:none">
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+    <span>
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#cecece"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+  </li>
+  <li class="pingfenimg satrContent">
+    <span style="display:none">
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+    <span>
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#cecece"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+  </li>
+  <li class="pingfenimg satrContent">
+    <span style="display:none">
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+    <span>
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#cecece"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+  </li>
+  <li class="pingfenimg satrContent">
+    <span style="display:none">
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+    <span>
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#cecece"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+  </li>
+  <li class="pingfenimg satrContent">
+    <span style="display:none">
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#ff4400"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+    <span>
+      <svg style="width: 20px;height: 20px;" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <style type="text/css">@font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }</style></defs>
+        <g class="transform-group">
+          <g transform="scale(0.125, 0.125)">
+            <path d="M512.042467 85.638449 650.594033 366.339526 960.284351 411.382395 736.140385 629.831662 789.018709 938.361551 512.042467 792.660144 234.979244 938.361551 287.858592 629.831662 63.714625 411.382395 373.489878 366.339526Z" fill="#cecece"></path>
+          </g>
+        </g>
+      </svg>
+    </span>
+  </li>
+</ul>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <div class="form-group">
+                        <label>商品</label>
+                        <ul class="sjmf-sp clearfix">
+                            <li class="sp-item empty-sp">
+                                暂无商品
+                            </li>
+                            <li class="sp-item">
+                                <div class="ap-img-box">
+                                </div>
+                                <div class="ap-img-descript">
+                                    <a href="www.baidu.com" class="item-name">1111</a>
+                                    <p class="item-price">￥111.00</p>
+                                    <p class="item-select"><span class="remove">-</span><input
+                                            class="itemnum" value="0"><span class="add">+</span></p>
+                                </div>
+                            </li>
+                            <li class="sp-item">
+                                <div class="ap-img-box">
+                                    <img src="../images/formDefaultPicture.png"/>
+                                </div>
+                                <div class="ap-img-descript">
+                                    <a href="www.baidu.com" class="item-name">1111</a>
+                                    <p class="item-price">￥111.00</p>
+                                    <p class="item-select"><span class="remove">-</span><input
+                                            class="itemnum" value="0"><span class="add">+</span></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <div class="form-group">
+                        <label>图片</label>
+                        <div class="sp-img">
+                            <img width="100%" src="../images/formDefaultPicture.png"/>
+                        </div>
+                        <div class="img-descript">这里是图片,写下你对它的描述</div>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <label>分割线</label>
+                    <hr class="sjmf-hr"/>
+                    <div class="hr-descript">写下你对它的描述</div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <div class="ui-draggable">
+                        <div class="page-pre">第 1 页</div>
+                        <div class="page">
+                            <div class="same-as-break break-color"></div>
+                        </div>
+                        <div class="page-next">第 2 页</div>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <div class="form-group">
+                        <label>姓名<span class="com-required">*</span></label>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <div class="form-group">
+                        <label>公司<span class="com-required">*</span></label>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="like_li" style="width: 100%;">
+                    <label>单选<span class="com-required">*</span></label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="sex" value="option1">选项 1
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="sex" value="option2">选项 2
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="f-footer">
+            <a class="f_pageBtn f_pagePrev fs_submitBtn"> 上一页 </a>
+            <a class="f_pageBtn f_pageNext fs_submitBtn "> 下一页 </a>
+            <a class="no-submit">预览模式下不能提交</a>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/style.js"></script>
+<script src="../js/view-form.js"></script>
+<script src="../js/colpick.js"></script>
+<script src="../plugin/My97DatePicker/WdatePicker.js"></script>
+<script src="../plugin/My97DatePicker/lang/zh-cn.js"></script>
+<script src="../plugin/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+</body>
+<script>
+/***************************************数据整理提交 start *****************************************/
+(function(argument) {
+                   // body...
+            
+               var supportType=["image/jpeg"]
+               $('#choseFile').on("click",function() {
+                    $(this).next("input").trigger("click")
+               })
+               $('#choseFile+input').on("change",function() {
+                    var file=$(this)[0].files[0];
+                    var type=file.type;
+                    var name=file.name;
+                    var hasSupport=false;
+                    for(var i in supportType){
+                        var reg=new  RegExp(supportType[i])
+                        if(reg.test(type)){
+                            hasSupport=true;
+                        }
+                    }
+                    if(hasSupport){
+                         $("#choseFile").prev('p').html(name)
+                         post(file)
+                     }else{
+                        alert("文件格式不支持！")
+                     }
+                })
+                function post(file){
+                    var oMyForm = new FormData();
+                    oMyForm.append("file",file)
+                    $.ajax({
+                          url: "./upload",
+                          type: "POST",
+                          data: oMyForm,
+                          processData: false,  // 告诉jQuery不要去处理发送的数据
+                          contentType: false,   // 告诉jQuery不要去设置Content-Type请求头
+                          success:function(_res){
+                               alert("OK")
+                        }
+                    });
+                }
+}());
+    var oldIndex=0;
+    $(".pingfenimg").on("click",function(argument) {
+        var index=$(this).index('.pingfenimg')
+        oldIndex=index;
+       $(".pingfenimg").find('span:eq(0)').hide()
+       $(".pingfenimg").find('span:eq(1)').show()
+       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(1)').hide()
+       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(0)').show()
+    }) 
+    $(".pingfenimg").on("mouseenter",function(argument) {
+        var index=$(this).index('.pingfenimg')
+       $(".pingfenimg").find('span:eq(0)').hide()
+       $(".pingfenimg").find('span:eq(1)').show()
+       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(1)').hide()
+       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(0)').show()
+    })    
+    $(".pingfenimg").on("mouseleave",function(argument) {
+        var index=oldIndex
+       $(".pingfenimg").find('span:eq(0)').hide()
+       $(".pingfenimg").find('span:eq(1)').show()
+       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(1)').hide()
+       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(0)').show()
+    })
+    </script>
+</html>

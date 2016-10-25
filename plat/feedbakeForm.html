@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建表单</title>
+    <link href="../plugin/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../plugin/My97DatePicker/skin/WdatePicker.css" rel="stylesheet"/>
+    <link href="../theme/style.css" rel="stylesheet"/>
+    <link href="../theme/feedbackForm.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div id="wrapper">
+    <div id="main">
+        <div class="formFeedback_header clearfix">
+            <span class="formFeedback_title">test</span>
+            <!--<a class="btn btn-primary btn-sm btn_toGraphic">
+                <img src="../images/feedback_graphic.png">
+                统计报表
+            </a>-->
+            <a class="btn btn-primary btn_toFormList btn-sm">
+                返回列表
+            </a>
+            <a class="btn btn-primary btn_toGraphic_ExportFeedBackPdf btn-sm">
+                导出统计图表
+            </a>
+            <a class="btn btn-primary btn_ExportFeedBack btn-sm">
+                导出全部反馈
+            </a>
+            <a class="btn btn-primary btn_editForm btn-sm">
+                编辑表单
+            </a>
+        </div>
+        <div class="formBottom_list">
+            <div class="formList">
+                <div class="formFeedback_operate">
+                    <label class="input_checkbox checkbox3State fll"
+                           style="margin: 0;position: absolute;z-index: 100;margin: 7px 0 0 8px;" id="checkAll"><input
+                            type="checkbox" class="chk_list" name="chk_list_all"></label>
+                    <div class="btn-group font-12">
+                        <button type="button" class="btn btn-default dropdown-toggle font-12" data-toggle="dropdown"
+                                style="padding-left: 28px"><span class="caret"></span></button>
+                        <ul class="dropdown-menu width-li-62" role="menu" select-state>
+                            <li><a href="javascript:void(0)" class="change-form-name font-12"
+                                   select-state="show">选择已显示<span>（2）</span></a></li>
+                            <li><a href="javascript:void(0)" class="clone-form font-12"
+                                   select-state="all">选择全部<span>（2）</span></a></li>
+                            <li><a href="javascript:void(0)" class="delete-foem font-12" select-state="none">取消选择</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-group font-12">
+                        <button type="button" class="btn btn-default dropdown-toggle font-12" data-toggle="dropdown">
+                            <span class="select-text">批量操作</span><span class="caret"></span></button>
+                        <ul class="dropdown-menu width-li-62 get-li-html" role="menu">
+                            <li><a href="javascript:void(0)" class="change-form-name font-12">标记为已读</a></li>
+                            <li><a href="javascript:void(0)" class="change-form-name font-12">标记为已处理</a></li>
+                            <li><a href="javascript:void(0)" class="change-form-name font-12">导出反馈</a></li>
+                            <li><a href="javascript:void(0)" class="change-form-name font-12">删除反馈</a></li>
+                            <li><a href="javascript:void(0)" class="change-form-name font-12">添加对应人到联系人群组</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group font-12">
+                        <button type="button" class="btn btn-default dropdown-toggle font-12" data-toggle="dropdown">
+                            <span class="select-text">显示全部</span><span class="caret"></span></button>
+                        <ul class="dropdown-menu width-li-62 get-li-html" role="menu">
+                            <li><a href="javascript:void(0)" class="change-form-name font-12">显示全部</a></li>
+                            <li><a href="javascript:void(0)" class="change-form-name font-12">显示星标</a></li>
+                            <li><a href="javascript:void(0)" class="change-form-name font-12">显示未读</a></li>
+                            <li><a href="javascript:void(0)" class="change-form-name font-12">显示已处理</a></li>
+                            <li><a href="javascript:void(0)" class="change-form-name font-12">显示未处理</a></li>
+                        </ul>
+                    </div>
+                    <a class="fb_toggleFilter">筛选</a>
+                    <p class="fb_showNum">已显示反馈：<span class="show_number">2</span></p>
+                </div>
+                <div class="fb_filterField clearfix" id="fb_filterField">
+                    <div class="fb_filterKey fll">
+                        <label class="font-12">内容包含：</label>
+                        <label class="input_val">
+                            <input class="input fb_keyword form-control font-12" placeholder="在内容中搜索...">
+                        </label>
+                    </div>
+
+                    <div class="fll" style="width:370px;margin-left: 20px">
+                        <label>收集时间：</label>
+                        <input class="input time-start form-control display-inline-block" onfocus="WdatePicker()">
+                        <label>至</label>
+                        <input class="input time-end form-control display-inline-block" onfocus="WdatePicker()">
+                        <a class="btn btn-primary btn-sm" style="margin-left: 20px">筛选</a>
+                    </div>
+                </div>
+
+                <div class="listView" tabindex="5000" style="overflow: auto; outline: none;">
+                    <p class="formList_data">今天-2016/09/08</p>
+                    <ul class="formList_item">
+                        <li class="fb_read  formList_active"><label class="item_checkbox input_checkbox chkList">
+                            <input type="checkbox" class="chk_list" name="chk_list_child"></label>
+                            <span class="item_time">[1] <span> 09-08 21:40</span></span>
+                            <span class="item_contactInfo">
+                                <span class="infoSpan_0">qq</span>
+                                <span class="infoSpan_1">qddddq</span>
+                            </span>
+
+                            <img class="item_disposed" src="../images/processedBlue.png" title="已处理">
+                        </li>
+                    </ul>
+                    <p class="formList_data">昨天-2016/09/07</p>
+                    <ul class="formList_item">
+                        <li class="fb_read  "><label class="item_checkbox input_checkbox chkList">
+                            <input type="checkbox" class="chk_list" name="chk_list_child"></label>
+                            <span class="item_time">[2] <span> 09-08 21:40</span></span>
+                            <span class="item_contactInfo">
+                                <span class="infoSpan_0">qq</span>
+                                <span class="infoSpan_1">qddddq</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="formView">
+                <div class="formFeedback_interim">
+                    <a class="btn btn-minor btn_dispose btn-sm clearfix">
+                        <div class="icon_dispose"></div>
+                        处理
+                    </a>
+                    <a class="btn btn-minor btn_mark btn-sm">
+                        <div class="icon star"></div>
+                        星标
+                    </a>
+                    <a class=" flr btn_delete" title="删除此反馈">
+                        <img src="../images/deleteContact.png">
+                    </a>
+                    <a class="  flr btn_print" title="打印此反馈">
+                        <div class="print"></div>
+                    </a>
+                    <!--查看联系人-->
+                    <!--<a class=" flr btn_contact" title="查看联系人">
+                        <div class="icon contact"></div>
+                    </a>-->
+                </div>
+                <div class="theForm" style="overflow: auto; outline: none; display: block; height: auto;">
+                    <div class="formBuilder_main">
+                        <div class="form_title">
+                            <div class="title"><h2>空白的表单</h2>
+                                <div class="font-12">从头开始创建您的表单</div>
+                            </div>
+                        </div>
+                        <ul class="form_component p-l-0">
+                            <li class="locked" id="com1">
+                                <span class="feedBackTitle">单行文本</span><span
+                                    class="feedBackValue">qq</span>
+                            </li>
+                            <li class="locked" id="com2">
+                                <span class="feedBackTitle">单行文本</span><span
+                                    class="feedBackValue">/</span>
+
+                            </li>
+                            <li class="locked" id="com3">
+                                <span class="feedBackTitle">单行文本</span>
+                                <span class="feedBackValue">/</span>
+
+                            </li>
+                            <li class="locked" id="com4">
+                                <span class="feedBackTitle">单行文本</span><span
+                                    class="feedBackValue">/</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <div class="form_note-panel" style="height: 0px;">
+                     <img class="img_formNote-close" src="../images/noteClose.png">
+                     <div class="form_note-c" style="height: 0px;">
+                         <ul class="form_note-list"></ul>
+                     </div>
+                 </div>-->
+                <div class="form_note-panel" style="height: 120px;">
+                    <img class="img_formNote-close" src="http://asset.mikecrm.com/images/icon/noteClose.png">
+                    <div class="form_note-c" tabindex="5012" style="height: 120px; overflow: hidden; outline: none;">
+                        <ul class="form_note-list">
+                            <li class="form_note-item">
+                                <p><span class="fname">我</span><span class="ftime">(2016-9-29 00:22:06)</span>:</p>
+                                <p class="finfo">啊啊啊</p>
+                                <p class="form_note-del" >x</p></li>
+                            <li class="form_note-item">
+                                <p><span class="fname">我</span><span class="ftime">(2016-9-29 00:22:06)</span>:</p>
+                                <p class="finfo">啊啊啊</p>
+                                <p class="form_note-del" >x</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form_note">
+                    <img class="img_formNote" src="../images/noteBlue.png" style="visibility: visible; opacity: 1;">
+                    <input class="input input_formNote form-control" maxlength="42" placeholder="点击输入备注" value="">
+                </div>
+                <!-- <div class="formViewMask">
+                     <div class="textWrap">
+                         <span class="text">加载中...</span>
+                         <img class="img" src="../images/loading_white.gif" alt="加载中">
+                         <i class="hint"></i>
+                     </div>
+                 </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/style.js"></script>
+<script src="../js/feedbakeForm.js"></script>
+<script src="../plugin/My97DatePicker/WdatePicker.js"></script>
+<script src="../plugin/My97DatePicker/lang/zh-cn.js"></script>
+<script src="../plugin/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

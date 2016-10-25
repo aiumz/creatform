@@ -1,0 +1,222 @@
+{
+ "form_id":"1",
+  "title":"测试表单",
+  "description":"这是我的第一个表单",
+  "uid":"1",
+  "item":{
+    "bgcolor":"#ffffff",
+    "headbgcolor":"#ffffff",
+    "headcolor":"#000000",
+    "labelcolor":"#000000",
+    "conbgcolor":"#ffffff",
+    "descolor":"#000000",
+    "bgimg":{
+      "url":"none",
+      "repeat":"no-repeat",
+      "position":"left",
+      "attachment":"fixed"
+    },
+    "headbgurl":"",
+    "headlogurl":"",
+    "formwidth":"fs_main_small",
+    "labelsize":"font-14px",
+    "itempadding":"padding-t-0"
+  },
+  "writeLimit":"",
+  "startTime":"",
+  "endtime":"",
+  "maxnum":"",
+  "isweixin":"",
+  "isonevote":"",
+  "completeinfotype":"",
+  "completeinfo":"",
+  "feedbackview":"",
+  "feedbackdetail":"",
+  "isaddcontacts":"",
+  "group_id":"",
+  "view":"",
+  "feedback":"",
+  "status":"",
+  "atime":"",
+  "ip":"",
+  "maxid":"",
+  "body":[
+    {
+      "componenttype":"singleLine",
+      "id":"com0",
+      "name":"单行文本",
+      "desc":"这是个单行文本",
+      "attribute ":"",
+      "choice ":[],
+      "config":""
+    },
+    {
+      "componenttype":"number",
+      "id":"com1",
+      "name":"数字输入框",
+      "desc":"这是个数字输入框",
+      "attribute ":"",
+      "choice ":[],
+      "config":""
+    },
+    {
+      "componenttype":"multiple",
+      "id":"com3",
+      "name":"多行文本",
+      "desc":"这是个多行文本",
+      "attribute ":"",
+      "choice ":[],
+      "config":""
+    },
+    {
+      "componenttype":"dropDown",
+      "id":"com4",
+      "name":"下拉菜单",
+      "desc":"这是个下拉菜单",
+      "attribute ":"",
+      "choice ":[
+        {
+        "name":"选项1",
+        "id":"option1"
+      },
+        {
+          "name":"选项2",
+          "id":"option2"
+        }
+      ],
+      "config":""
+    },
+    {
+      "componenttype":"radio",
+      "id":"com5",
+      "name":"单选框",
+      "desc":"这是单选框",
+      "attribute ":"",
+      "choice ":[
+        {
+          "name":"选项1",
+          "id":"option3"
+        },
+        {
+          "name":"选项2",
+          "id":"option4"
+        }
+      ],
+      "config":""
+    },
+    {
+      "componenttype":"checkBox",
+      "id":"com6",
+      "name":"多选框",
+      "desc":"这是个多选框",
+      "attribute ":"",
+      "choice ":[
+        {
+          "name":"选项1",
+          "id":"option5"
+        },
+        {
+          "name":"选项2",
+          "id":"option6"
+        }
+      ],
+      "config":""
+    },
+    {
+      "componenttype":"pictureRadio",
+      "id":"com7",
+      "name":"图片单选框",
+      "desc":"这是图片单选框",
+      "attribute ":"",
+      "choice ":[
+        {
+          "name":"选项1",
+          "id":"option7"
+        },
+        {
+          "name":"选项2",
+          "id":"option8"
+        }
+      ],
+      "config":""
+    },
+    {
+      "componenttype":"pictureCheckedBox",
+      "id":"com8",
+      "name":"图片多选框",
+      "desc":"这是个图片多选框",
+      "attribute ":"",
+      "choice ":[
+        {
+          "name":"选项1",
+          "id":"option9"
+        },
+        {
+          "name":"选项2",
+          "id":"option10"
+        }
+      ],
+      "config":""
+    },
+    {
+      "componenttype":"fileUpload",
+      "id":"com9",
+      "name":"附件",
+      "desc":"这是个附件",
+      "attribute ":"",
+      "choice ":[],
+      "config":""
+    },
+    {
+      "componenttype":"date",
+      "id":"com10",
+      "name":"日期",
+      "desc":"这是个日期",
+      "attribute ":"",
+      "choice ":[],
+      "config":""
+    },{
+      "componenttype":"star",
+      "id":"com11",
+      "name":"评分",
+      "desc":"这是个评分",
+      "attribute ":"",
+      "choice ":[],
+      "config":""
+    },{
+      "componenttype":"shopping",
+      "id":"com12",
+      "name":"商品",
+      "desc":"这是个商品",
+      "attribute ":"",
+      "choice ":[],
+      "config":""
+    },{
+      "componenttype":"picture",
+      "id":"com13",
+      "name":"图片",
+      "desc":"这是个图片",
+      "attribute ":"",
+      "choice ":[],
+      "config":""
+    },{
+      "componenttype":"section",
+      "id":"com15",
+      "name":"分割线",
+      "desc":"这是个分割线",
+      "attribute ":"",
+      "choice ":[],
+      "config":""
+    },{
+      "componenttype":"page",
+      "id":"com15",
+      "name":"分页",
+      "desc":"",
+      "attribute ":"",
+      "choice ":[],
+      "config":""
+    }
+
+  ]
+
+}

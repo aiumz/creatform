@@ -1,0 +1,65 @@
+.like-li-print{
+    margin: 0 auto;
+}
+.dotted-input{
+    height:30px;
+    border-bottom: 1px dashed #000;
+}
+.like-li-print{
+    margin-top: 10px;
+}
+.data-input{
+    display: inline-block;
+    width:40px;
+    border-bottom: 1px dashed #000;
+    margin-right: 5px;
+}
+.form-table{
+    border:1px solid #000;
+}
+.form-tr{
+    border-bottom: 1px solid #000;
+}
+.form-tr th,.form-tr td{
+    width:50px;
+    height: 30px;
+    text-align: center;
+    border-right:1px solid #000;
+}
+.form-th th:last-child{
+    border-right:0;
+}
+.radio-inline, .checkbox-inline{
+    padding-left: 0;
+    margin-right: 10px;
+}
+hr{
+    margin:5px 0;
+}
+.img-checkbox, .img-radio {
+    position: relative;
+    float: left;
+    width: 140px;
+    background-color: #FFF;
+    border: 1px solid #D5D5D5;
+    box-shadow: 0 2px 2px #EBEBEB;
+    margin-bottom: 4px;
+    padding: 0;
+    margin-right: 5px;
+    margin-left: 4px;
+    text-align: center;
+}
+.img-checkbox .img-box{
+    width: 150px;
+    height: 110px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    display: none;
+}
+.img-radio-option {
+    position: absolute;
+    margin-left: -20px !important;
+}

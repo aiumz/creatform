@@ -1,0 +1,64 @@
+.view-form .same-as-break{
+    width:100%;
+    left:0;
+}
+.f_pageBtn {
+    display: inline-block;
+    line-height: 28px;
+    padding: 0 20px;
+    font-size: 13px;
+    text-align: center;
+    color: #FFF;
+    background: #3E76A7;
+    border-radius: 2px;
+    margin: 0 8px;
+    cursor: pointer;
+}
+.fs_submitBtn, .fs_mobile_vcode_btn {
+    background-color: #3a4021;
+    color: #fff;
+    box-shadow: 0 2px 4px -2px #505634;
+}
+.fs_submitBtn:hover, .fs_mobile_vcode_btn:hover {
+    background-color: #505634;
+}
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.img-checkbox, .img-radio {
+    padding:10px;
+}
+.no-submit:hover{
+    color: #000;
+    background-attachment: fixed ;
+}
+
+/*表单整个的样式设置*/
+.fs_main_small{
+    width:570px;
+}
+.fs_main_normal{
+     width:640px;
+ }
+.fs_main_big{
+    width:750px;
+}
+.font-14px{
+    font-size:14px;
+}
+.font-16px{
+    font-size:16px;
+}
+.font-18px{
+    font-size:18px;
+}
+.padding-t-0{
+    padding-top:0!important;
+}
+.padding-t-5{
+    padding-top:5px!important;
+}
+.padding-t-10{
+    padding-top:10px!important;
+}

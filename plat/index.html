@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建表单</title>
+    <link href="../plugin/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../theme/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="creat-form">
+    <div class="form-top info-show clearfix">
+        <a class="creat-btn pull-left" href="#" data-target="#sjmfmodal" data-toggle="modal">
+            <svg style="height:12px;width:12px;position: relative;" viewBox="0 0 207.8125 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><! [CDATA[ @font-face {  font-family: ifont;  src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg);  }  ]  ]></style></defs><g class="transform-group"><g transform="scale(0.1953125, 0.1953125)"><path d="M31.054769 472.615385 1055.054769 472.615385 1055.054769 590.769231 31.054769 590.769231 31.054769 472.615385ZM503.670154 0 621.824 0 621.824 1024 503.670154 1024 503.670154 0Z" fill="#fff"></path></g></g></svg>
+            <span class="creat-btn-text" >创建表单</span></a>
+        <div class="form-group pull-right">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                    <span class="select-text">默认</span> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu get-li-html" role="menu">
+                    <li><a href="#">置顶优先</a></li>
+                    <li><a href="#">按创建时间升序</a></li>
+                    <li><a href="#">按创建时间降序</a></li>
+                    <li><a href="#">按最近一条反馈到达时间</a></li>
+                    <li><a href="#">按表单反馈数升序</a></li>
+                    <li><a href="#">按表单反馈数降序</a></li>
+                </ul>
+            </div>
+            <div class="input-group pull-right search-group">
+                <input type="text" class="form-control">
+               <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">
+                      Go!
+                  </button>
+               </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="form-bottom">
+        <ul id="myTab" class="nav nav-tabs sjmf_tabs">
+            <li class="active">
+                <a href="#home" data-toggle="tab">
+                   未分组<span>2</span>
+                </a>
+            </li>
+            <li><a href="#erhao" data-toggle="tab">二号分组<span>0</span></a></li>
+            <li class="dropdown">
+                <a href="#" id="myTabDrop1" class="dropdown-toggle"
+                   data-toggle="dropdown">
+                    <svg width="14" height="14" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[  @font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }                    ]]></style></defs><g class="transform-group"><g transform="scale(0.1953125, 0.1953125)"><path d="M739.456 481.984 551.104 481.984 551.104 275.072c0-13.504-10.496-22.912-33.792-24.256S483.52 261.504 483.52 275.072l0 206.912L284.608 481.984c0 0-37.568-3.456-37.568 27.072 0 41.088 16.064 41.024 29.568 41.024l206.912 0-0.064 216.96c0 16.96-3.52 39.424 31.616 39.424 36.992 0 35.264-34.048 35.264-41.984l0.832-214.464 188.352 0c8.64 0 41.984 2.432 42.432-35.584S739.456 481.984 739.456 481.984zM518.592 42.048c-265.152 0-480 214.848-480 480 0 265.088 214.848 480 480 480s480-214.848 480-480S783.68 42.048 518.592 42.048zM518.592 937.984c-229.76 0-416-186.304-416-416 0-229.76 186.24-416 416-416s416 186.24 416 416C934.528 751.744 748.352 937.984 518.592 937.984z" fill="#fff"></path></g></g></svg>
+                    新分组
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                    <li>
+                        <div class="input-group add-new-tabs">
+                            <input type="text" class="form-control" id="add-tab-group-input">
+                           <span class="input-group-btn">
+                              <button class="btn btn-default" type="button" id="add-tab-group-btn">
+                                  确定
+                              </button>
+                           </span>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="home">
+                <ul class="form-block-box">
+                    <li  class="form-creation old-form-li">
+                        <div class="settop-container">
+                            <span class="old-form-color set-top" >设置置顶</span>
+                            <div class="is-top-logo"></div>
+                        </div>
+                        <input class="name-of-form old-form-font" value="新的表单" readonly="readonly">
+                        <div class="check-feedback pull-right old-form-color">查看反馈<em>(0)</em></div>
+                        <div class="form-settings clearfix">
+                            <div class="btn-group ">
+                                <button type="button" class="btn btn-default dropdown-toggle form-settings-btn" data-toggle="dropdown">分组 <span class="caret"></span></button>
+                                <ul class="dropdown-menu min-width-110" role="menu">
+                                    <li><a href="#" class="move-to-group" data-group="#erhao">二号分组</a></li>
+                                </ul>
+                            </div>
+                            <a class="form-edit sjmf-fll"  href="editForm.html">
+                                <svg style="width: 14px;height: 14px;position: absolute;margin-left: -20px;" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[  @font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); } ]]></style></defs><g class="transform-group"><g transform="scale(0.1953125, 0.1953125)"><path d="M0.0002 1023.999975 262.593097 941.470007 870.30586 333.757245 690.24193 153.694315 82.530168 761.407078ZM825.288878 18.646368l-75.023971 75.025971 180.06293 180.06193 75.024971-75.024971c24.85999-24.86099 24.85999-65.169975 0-90.030965l-90.030965-90.030965C890.461852-6.215623 850.151868-6.215623 825.288878 18.646368z" fill="#2776A4"></path></g></g></svg>
+                                编辑
+                            </a>
+                            <a class=" form-derive sjmf-fll" href="generateForm.html">
+                                <svg style="width: 14px;height: 14px;position: absolute;margin-left: -20px;" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[  @font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }]]></style></defs><g class="transform-group"><g transform="scale(0.1953125, 0.1953125)"><path d="M432.699272 639.576626l156.795061 0c0-108.744961 0-326.302624 0-326.302624l127.621786-1.851555L514.754752 72.617067 305.100066 305.958104l0 1.851555 127.599206 5.464344C432.699272 313.274002 432.699272 530.831665 432.699272 639.576626zM863.027652 490.120044c-11.809305-23.234752-38.950386-74.626681-47.417861-80.249085-17.996207-1.128997-128.299184-5.757883-143.992238-1.828975-5.735303 9.573892-7.632018 62.433517 0 67.446262 10.002911 6.074002 66.678545-0.903197 72.865447 16.438192 10.31903 7.022359 134.960265 236.998986 134.960265 236.998986l-209.654686 0-9.167453 136.721499-317.248071-1.806395 3.635369-138.527894L159.211114 725.312635c0 0 70.088115-133.582889 120.328467-235.192591 10.635149-20.683219 66.317266 6.119162 72.910606-16.460772l0-52.837045c-2.416053-3.657949-7.270739-10.951268-7.270739-10.951268l-133.10871-1.828975-167.768908 344.61495 0 198.725998c0 0 616.974112 0 920.832282 0 6.209482-3.138611 12.396384-8.015877 14.518897-14.631797l0-218.776979C940.770364 642.015259 901.910298 566.056362 863.027652 490.120044z" fill="#2776A4"></path></g></g></svg>
+                                生成
+                            </a>
+                            <a class=" form-preView sjmf-fll" href="#">
+                                <svg style="width: 18px;height: 18px;position: absolute;margin-left: -20px;" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[  @font-face { font-family: ifont;  src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }  ]]></style></defs><g class="transform-group"><g transform="scale(0.1953125, 0.1953125)"><path d="M28.48 479.296c0 0 452.288 553.6 894.208 0C431.488-108.48 28.48 479.296 28.48 479.296zM477.696 626.24c-83.456 0-151.168-67.712-151.168-151.168S394.24 323.968 477.696 323.968c83.392 0 151.104 67.712 151.104 151.168S561.152 626.24 477.696 626.24zM473.344 475.136m-75.584 0a1.181 1.181 0 1 0 151.168 0 1.181 1.181 0 1 0-151.168 0Z" fill="#2776A4"></path></g></g></svg>
+                                预览</a>
+                            <div class="operate_more dropdown_wrapper pull-right">
+                                <div class="btn-group ">
+                                    <button type="button" class="btn btn-default dropdown-toggle more-settings" data-toggle="dropdown">更多<span class="caret"></span></button>
+                                    <ul class="dropdown-menu width-li-62" role="menu">
+                                        <li><a href="javascript:void(0)" class="change-form-name">重命名</a></li>
+                                        <li><a href="javascript:void(0)" class="clone-form">创建副本</a></li>
+                                        <li><a href="javascript:void(0)" class="delete-form">删除表单</a></li>
+                                    </ul>
+                                </div>
+                        </div>
+                            <div class="form_icon form_payment" title="含有商品组件"></div>
+                            <div class="form_icon form_contactsNum" title="自动创建联系人"></div>
+                            <div class="form_icon form_setTime" title="反馈量达12时关闭表单"></div>
+                            <a class="form-info-more" href="javascript:void(0)"></a>
+                        </div>
+                        <div class="form-moreInfos old-form-color"><p class="p-moreInfos">创建时间：<span class="moreInfo-createAt">2016-07-17 13:03:55</span>创建人：<span class="moreInfo-createBy">lucifer</span>最近编辑：<span class="moreInfo-modifiedAt">2016-07-17 13:03:55</span>编辑人：
+                            <span
+                                class="moreInfo_modifiedBy">lucifer</span></p></div>
+                    </li>
+                    <li  class="form-creation new-form-li">
+                        <div class="settop-container">
+                            <span class="new-form-color set-top" >设置置顶</span>
+                            <div class="is-top-logo"></div>
+                        </div>
+                        <input class="name-of-form new-form-font" value="新的表单" readonly="readonly">
+                        <div class="check-feedback pull-right new-form-color">查看反馈<em>(0)</em></div>
+                        <div class="form-settings clearfix">
+                            <div class="btn-group ">
+                                <button type="button" class="btn btn-default dropdown-toggle form-settings-btn" data-toggle="dropdown">分组 <span class="caret"></span></button>
+                                <ul class="dropdown-menu min-width-110" role="menu">
+                                    <li><a href="#" class="move-to-group" data-group="#erhao">二号分组</a></li>
+                                </ul>
+                            </div>
+                            <a class="form-edit sjmf-fll"  href="editForm.html">
+                                <svg style="width: 14px;height: 14px;position: absolute;margin-left: -20px;" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[  @font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); } ]]></style></defs><g class="transform-group"><g transform="scale(0.1953125, 0.1953125)"><path d="M0.0002 1023.999975 262.593097 941.470007 870.30586 333.757245 690.24193 153.694315 82.530168 761.407078ZM825.288878 18.646368l-75.023971 75.025971 180.06293 180.06193 75.024971-75.024971c24.85999-24.86099 24.85999-65.169975 0-90.030965l-90.030965-90.030965C890.461852-6.215623 850.151868-6.215623 825.288878 18.646368z" fill="#E25E14"></path></g></g></svg>
+                                编辑</a>
+                            <a class=" form-derive sjmf-fll" href="generateForm.html">
+                                <svg style="width: 14px;height: 14px;position: absolute;margin-left: -20px;" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[  @font-face { font-family: ifont; src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }]]></style></defs><g class="transform-group"><g transform="scale(0.1953125, 0.1953125)"><path d="M432.699272 639.576626l156.795061 0c0-108.744961 0-326.302624 0-326.302624l127.621786-1.851555L514.754752 72.617067 305.100066 305.958104l0 1.851555 127.599206 5.464344C432.699272 313.274002 432.699272 530.831665 432.699272 639.576626zM863.027652 490.120044c-11.809305-23.234752-38.950386-74.626681-47.417861-80.249085-17.996207-1.128997-128.299184-5.757883-143.992238-1.828975-5.735303 9.573892-7.632018 62.433517 0 67.446262 10.002911 6.074002 66.678545-0.903197 72.865447 16.438192 10.31903 7.022359 134.960265 236.998986 134.960265 236.998986l-209.654686 0-9.167453 136.721499-317.248071-1.806395 3.635369-138.527894L159.211114 725.312635c0 0 70.088115-133.582889 120.328467-235.192591 10.635149-20.683219 66.317266 6.119162 72.910606-16.460772l0-52.837045c-2.416053-3.657949-7.270739-10.951268-7.270739-10.951268l-133.10871-1.828975-167.768908 344.61495 0 198.725998c0 0 616.974112 0 920.832282 0 6.209482-3.138611 12.396384-8.015877 14.518897-14.631797l0-218.776979C940.770364 642.015259 901.910298 566.056362 863.027652 490.120044z" fill="#E25E14"></path></g></g></svg>
+                                生成</a>
+                            <a class=" form-preView sjmf-fll" href="#">
+                                <svg style="width: 18px;height: 18px;position: absolute;margin-left: -20px;" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[  @font-face { font-family: ifont;  src: url(http://at.alicdn.com/t/font_1442373896_4754455.eot?#iefix) format(embedded-opentype), url(http://at.alicdn.com/t/font_1442373896_4754455.woff) format(woff), url(http://at.alicdn.com/t/font_1442373896_4754455.ttf) format(truetype), url(http://at.alicdn.com/t/font_1442373896_4754455.svg#ifont) format(svg); }  ]]></style></defs><g class="transform-group"><g transform="scale(0.1953125, 0.1953125)"><path d="M28.48 479.296c0 0 452.288 553.6 894.208 0C431.488-108.48 28.48 479.296 28.48 479.296zM477.696 626.24c-83.456 0-151.168-67.712-151.168-151.168S394.24 323.968 477.696 323.968c83.392 0 151.104 67.712 151.104 151.168S561.152 626.24 477.696 626.24zM473.344 475.136m-75.584 0a1.181 1.181 0 1 0 151.168 0 1.181 1.181 0 1 0-151.168 0Z" fill="#E25E14"></path></g></g></svg>
+                                预览</a>
+
+                            <div class="operate_more dropdown_wrapper pull-right">
+                                <div class="btn-group ">
+                                    <button type="button" class="btn btn-default dropdown-toggle more-settings" data-toggle="dropdown">更多<span class="caret"></span></button>
+                                    <ul class="dropdown-menu width-li-62" role="menu">
+                                        <li><a href="javascript:void(0)" class="change-form-name">重命名</a></li>
+                                        <li><a href="javascript:void(0)" class="clone-form">创建副本</a></li>
+                                        <li><a href="javascript:void(0)" class="delete-foem">删除表单</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form_icon new_form_payment" title="含有商品组件"></div>
+                            <div class="form_icon new_form_contactsNum" title="自动创建联系人"></div>
+                            <div class="form_icon new_form_setTime" title="反馈量达12时关闭表单"></div>
+                            <a class="form-info-more" href="javascript:void(0)">
+                            </a>
+                        </div>
+                        <div class="form-moreInfos new-form-color" ><p class="p-moreInfos">创建时间：<span class="moreInfo-createAt">2016-07-17 13:03:55</span>创建人：<span class="moreInfo-createBy">lucifer</span>最近编辑：<span class="moreInfo-modifiedAt">2016-07-17 13:03:55</span>编辑人：
+                            <span class="moreInfo_modifiedBy">lucifer</span></p></div>
+                    </li>
+                </ul>
+            </div>
+            <div id="erhao"  class="tab-pane fade ">
+                <ul class="form-block-box"><div class="noForm"><p>该分组下没有表单</p></div></ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal fade creat-form-name" id="sjmfmodal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                   创建新表单
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="popwin_formTypeContent clearfix">
+                    <div class="popwin_formtype popwin_formtype_normal">
+                        <img src="../images//form_o.png">普通表单
+                    </div>
+                   <!-- <div class="popwin_formtype popwin_formtype_logic">
+                        <img src="../images/form_l.png">逻辑表单
+                    </div>-->
+                    <div class="sjmf-set-form-name" >
+                        <p class="sjmf-set-name-tips">表单名称</p>
+                        <input class="form-control sjmf-set-name" type="text" value="新的表单" placeholder="请输入表单名称">
+
+                        <div class="btn-group-box">
+                            <button type="button" class="btn btn-primary creat-form-btn">创建表单</button>
+                            <button type="button" class="btn btn-default cancel-form-btn">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/style.js"></script>
+<script src="../plugin/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        /*添加标签页（表单组）*/
+        $('#add-tab-group-btn').on('click',function(){
+            var _tabslength = $('#myTab').find('li').length -1;
+            var $groupName = $('#add-tab-group-input').val();
+            if($groupName){
+                $(this).parents('.dropdown').before('<li><a href="#sjmf-form-group'+_tabslength+'" data-toggle="tab">'+$groupName+'<span>0</span></a></li>');
+                $('#add-tab-group-input').val("");
+                $('#myTabContent').append('<div  class="tab-pane fade in " id="sjmf-form-group'+_tabslength+'"><ul class="form-block-box"><div class="noForm"><p>该分组下没有表单</p></div></ul></div>');
+            }else{
+            }
+        })
+        /*双击修改表单名称*/
+        $('.form-block-box').on('dblclick','.name-of-form', function () {
+            $(this).removeAttr('readonly').focus();
+            $(this).blur(function(){
+                $(this).attr('readonly','readonly');
+            })
+        });
+        /*修改表单名称*/
+        $('.form-block-box').on('click','.change-form-name', function () {
+            $(this).parents('.form-creation').find('.name-of-form')
+                    .removeAttr('readonly')
+                    .focus()
+                    .blur(function(){
+                        $(this).attr('readonly','readonly');
+                     });
+        });
+        /*创建表单副本*/
+        $('.form-block-box').on('click','.clone-form', function () {
+            var _theform = $(this).parents('.form-creation');
+            var oleVal=_theform.find('.name-of-form').val();
+            _theform.before(_theform.clone(true)).find('.name-of-form').removeAttr('readonly')
+                    .focus()
+                    .attr("value",oleVal+'-副本')
+
+        })
+        /*删除表单*/
+        $('.form-block-box').on('click','.delete-form', function () {
+
+            $(this).parents('.form-creation').remove();
+        })
+
+    })
+   /* function editname(oldvalue){
+        $(this).attr('readonly','readonly');
+    }*/
+</script>
+</body>
+</html>
