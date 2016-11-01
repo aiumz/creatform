@@ -66,7 +66,7 @@
                     _this[_index].edit = oldValue;
                 })
                 $(".load").remove()
-                $("<input type='file' id='_displayInput'/>").appendTo($("body"))
+                $("<input type='file' id='_displayInput' style='display: none'/>").appendTo($("body"))
             }
         }
         allHTML.init()
@@ -148,11 +148,14 @@
                 return this;
             },
             setRequired: function () {
-                this.editElem.find('input,textarea').addClass("required")
-                return this;
-            },
-            getRequired: function () {
-                this.editElem.find('.required').checked()
+                var checked=this.required;
+                 if(checked){
+                        this.mainElem.attr("isRequired",true).find(".com-required").show()
+
+                    }else{
+                        this.mainElem.attr("isRequired",false).find(".com-required").hide()
+                    }
+                this.editElem.find('.isRequired ').attr("checked", checked); 
                 return this;
             },
             getWidth: function () {
@@ -242,9 +245,7 @@
             },
             fileInput:$('<input type="file" name="img" id="" style="display:none"/>'),
             getUrl: function(oInput,fn) {
-           
                 oInput.trigger("click")
-
                 oInput.one("change",function(argument) {
                     /*   var oMyForm = new FormData();*/
                     var oFReader = new FileReader(), rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
@@ -268,12 +269,8 @@
                 })
                 this.editElem.find('.isRequired').on('click', function () {
                     var checked=$(this).is(':checked')
-                    alert(checked)
-                    if(checked){
-                        _this.mainElem.find(".com-required").attr("isRequired",true).show()
-                    }else{
-                        _this.mainElem.find(".com-required").attr("isRequired",false).hide()
-                    }
+                    _this.required=checked;
+                    _this.setRequired()
                 })
                 this.editElem.find('.el-md').on('click', function () {
                     _this.width='MD'
@@ -1627,13 +1624,20 @@
 //商品
 //多选
     function setFormConfig(argument) {
-        $.post("http://120.76.138.42:8099/form.php/index/getform/id/3",function (data) {
-    
+        $.post("http://120.76.138.42:8099/form.php/index/getform/id/1",function (data) {
+            /*表单表头处理---start*/
+            $('#the-form-tit').text(data.title?data.title:"空白的表单");
+            $('#form-title').val(data.title?data.title:"空白的表单");
+            $('.main-form-desc').text(data.description);
+            $('#form-desc').val(data.description);
+           /* $('.formLogo').html()*/ //表单logo
+            //表单表头背景图
+            /*表单表头处理 ---end*/
             if(!data)return;
             if(!data.body)return;
             config.indexId=data.maxid+1||0;
+             config.formSet.theme=data.theme
             var data=data.body;
-
             for(var i in data){
                 if(!data[i].config)return;
                 var formConfg=JSON.parse(decodeURI(data[i].config))
@@ -1698,6 +1702,7 @@
                     var a=Elem.pageTurning(formConfg.elemId)
                     a. setConfig(formConfg)
                 }
+                config.setColor()
 
             }
         })
@@ -1797,11 +1802,12 @@
 
 
             config.formSet.html=encodeURI($("#postMain").html())
-            config.formSet.theme=config.colorSet
+            config.formSet.theme=config.formSet.theme
             config.formSet.body=postConfig;}
         getFormConfig()
+        console.log(config.formSet)
         $.post("http://120.76.138.42:8099/form.php/index/editform",{data:config.formSet},function (data) {
-           
+            alert(1211)
         })
 
     })

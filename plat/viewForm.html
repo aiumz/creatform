@@ -9,7 +9,13 @@
     <link href="../theme/style.css" rel="stylesheet"/>
     <link href="../theme/view-form.css" rel="stylesheet"/>
     <link href="../theme/colpick.css" rel="stylesheet"/>
-
+  <style>
+    .pagewrap{
+      height:100%;
+      padding:20px;
+      display:none;
+    }
+  </style>
 </head>
 <body>
 <div class="fp-operate">
@@ -27,9 +33,10 @@
 
         </div>
         <div class="f-footer">
+      <p class="f_pageNumber"></p>
             <a class="f_pageBtn f_pagePrev fs_submitBtn"> 上一页 </a>
             <a class="f_pageBtn f_pageNext fs_submitBtn "> 下一页 </a>
-            <a class="no-submit">预览模式下不能提交</a>
+            <a class="no-submit submit">预览模式下不能提交</a>
         </div>
     </div>
 </div>
@@ -44,13 +51,99 @@
 <script>
 /***************************************数据整理提交 start *****************************************/
 (function(argument) {
-                   // body...
-            
+               
+}());
+
+setTimeout(function(){
+$(".f_pageBtn").show()
+},100)
+;(function(argument) {
+    $view={
+      pageNumber:0,
+      viewType:1, //1是预览 2 是发布
+      html:"",
+      requireData:null,
+      page:[],
+      init:function() {
+         var _this=this;
+         var viewType=_this.getQueryString("viewType");
+         if(viewType==1){
+            this.viewType=1;
+            $.post("http://120.76.138.42:8099/form.php/index/getform/id/1",function (data) {
+              _this.requireData=data;
+              _this.html=$("<div>"+decodeURI(data.html)+"</div>");
+               _this.html.find("[readonly]").attr("readonly",false);
+               _this.html.find("input").attr("disabled",false);
+              _this.viewManager();
+              _this.setColor()
+            })
+         }else{
+            this.viewType=2;
+         }
+      },
+      setColor:function(argument) {
+       var theme=this.requireData.theme;
+       console.log(this.requireData)
+
+      },
+      getQueryString:function (name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+      },
+      pageShow:function(){
+       var pageNumber=this.pageNumber;
+       var page=this.page;
+      //页面切换
+      $("[page]").hide();
+      $("[page="+this.pageNumber+"]").show();
+      //上一页下一页样式切换 提交按钮的显示
+      $(".f_pageBtn").removeClass("disabled_syle")
+      $('.submit').hide();
+      if(pageNumber==0){
+        $(".f_pagePrev").addClass("disabled_syle")
+      }
+      if(pageNumber==page.length-1){
+        $(".f_pageNext").addClass("disabled_syle")
+        $('.submit').show();
+      }
+    
+    //页码管理
+      $(".f_pageNumber").html("第"+(pageNumber+1)+"页,共"+page.length+"页")
+      
+      
+     },
+    viewManager:function(argument) {
+        var _this=this;
+        var len=this.html.find("[type=pageTurning]").length+1;
+        for(var i=0;i<len;i++){
+            this.page.push($("<div class='pagewrap' page="+i+"></div>"));
+        }
+        var pageIndex=0;
+        this.html.find(".like_li").each(function(index,value) {
+            if($(value).attr("type")=="pageTurning"){
+              pageIndex++;
+            }else{
+              _this.page[pageIndex].append($(value));
+            }
+        })
+        $(".f-header").append(this.html.find("[type=header]"))
+        for(var i in this.page){
+          $(".f-body").append(this.page[i]);
+        };
+      this.pageShow()
+      },
+   //星标
+   star:function(){
+   },
+   //文件上传
+   filesUpload:function(){
+    // body...
                var supportType=["image/jpeg"]
-               $('#choseFile').on("click",function() {
+               $(document).on("click",'#choseFile',function() {
                     $(this).next("input").trigger("click")
                })
-               $('#choseFile+input').on("change",function() {
+               $(document).on("change",'#choseFile+input',function() {
                     var file=$(this)[0].files[0];
                     var type=file.type;
                     var name=file.name;
@@ -82,88 +175,108 @@
                         }
                     });
                 }
-}());
-/*    var oldIndex=0;
-    $(".pingfenimg").on("click",function(argument) {
-        var index=$(this).index('.pingfenimg')
-        oldIndex=index;
-       $(".pingfenimg").find('span:eq(0)').hide()
-       $(".pingfenimg").find('span:eq(1)').show()
-       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(1)').hide()
-       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(0)').show()
-    }) 
-    $(".pingfenimg").on("mouseenter",function(argument) {
-        var index=$(this).index('.pingfenimg')
-       $(".pingfenimg").find('span:eq(0)').hide()
-       $(".pingfenimg").find('span:eq(1)').show()
-       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(1)').hide()
-       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(0)').show()
-    })    
-    $(".pingfenimg").on("mouseleave",function(argument) {
-        var index=oldIndex
-       $(".pingfenimg").find('span:eq(0)').hide()
-       $(".pingfenimg").find('span:eq(1)').show()
-       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(1)').hide()
-       $(".pingfenimg:lt("+(index+1)+")").find('span:eq(0)').show()
-    })*/
+   },
+   //表单验证
+   verification:function(type,value){
+    var reg=null;
+    if(type=="姓名"){
+      reg=/[A-Za-z0-9_\-\u4e00-\u9fa5]+/
+      return reg.test(value);
+    }
+    if(type=="职位"){
 
- ;(function(argument) {
-    $view={
-      viewType:1, //1是预览 2 是发布
-      html:"",
-      page:[],
-      init:function() {
-         var _this=this;
-         var viewType=_this.getQueryString("viewType");
-         if(viewType==1){
-            this.viewType=1;
-            $.post("http://120.76.138.42:8099/form.php/index/getform/id/3",function (data) {
-              _this.html=$("<div>"+decodeURI(data.html)+"</div>")
-              //_this.html="<div>"+decodeURI(data.html)+"</div>"
-              _this.viewManager()
-            })
-         }else{
-            this.viewType=2;
-           /* _this.html=data.html
-              _this.viewManager()*/
-         }
-      },
-     getQueryString:function (name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) return unescape(r[2]); return null;
-      },  
-      viewManager:function(argument) {
-        var _this=this;
-          var len=this.html.find("[type=pageTurning]").length+1;
-          for(var i=0;i<len;i++){
-            this.page.push($("<div page="+i+"></div>"))
-          }
-          var pageIndex=0;
-          this.html.find(".like_li").each(function(index,value) {
-            if($(value).attr("type")=="pageTurning"){
-              pageIndex++;
-            }else{
-              _this.page[pageIndex].append($(value))
-            }
+    }
+
+    if(type=="通讯地址"){
+
+    }  
+    if(type=="手机"){
+      reg = /^1[0-9]{10}$/;
+    }
+    if(type=="E-mail"){
+      reg =/\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/
+
+    }
+    if(type=="qq"){
+      reg=/[1-9]([0-9]{5,11})/
+    }
+    if(type=="微信"){
+
+    }
+    if(type=="公司"){
+
+    }
+    if(type=="固话"){
+      reg =/[0-9-()（）]{7,18}/
+    }
+    if(type=="传真"){
+
+    }
+    if(type=="网址"){
+      reg = /^((https?|ftp|news):\/\/)?([a-z]([a-z0-9\-]*[\.。])+([a-z]{2}|aero|arpa|biz|com|coop|edu|gov|info|int|jobs|mil|museum|name|nato|net|org|pro|travel)|(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))(\/[a-z0-9_\-\.~]+)*(\/([a-z0-9_\-\.]*)(\?[a-z0-9+_\-\.%=&]*)?)?(#[a-z][a-z0-9_]*)?$/
+    }
+        
+    if(type=="生日"){
+      reg = /^(19|20)\d{2}-(1[0-2]|0?[1-9])-(0?[1-9]|[1-2][0-9]|3[0-1])$/;   
+    }
+    if(type=="备注"){
+
+    }
+
+    if(reg==null){
+      return{
+        result:true,
+        value:type,
+      }
+    }
+    return {
+      result:reg.test(value),
+      value:type,
+    }
+   },
+   check:function(argument) {
+     var result=[]; 
+     var _this=this;
+     var elem=$("[page="+this.pageNumber+"]")
+     elem.find("[isRequired=true]").each(function(index,value) {
+        var val=$(value).find("input").val();
+        var type=$(value).attr("type")
+        result.push({
+          result:val.length>0?true:false,
+          value:type,
+          key:"必填"
         })
-        for(var i in this.page){
-          $(".f-body").append(this.page[i])
-        }
-      },
+     })
+     elem.find("[type]").each(function(index,value) {
+       var type=$(value).attr("type")
+       var val=$(value).find("input").val();
+       result.push(_this.verification(type,val))
+     })
+     console.log(result)
+     return result.some(function(item) {
+          return item.result==false;
+      });
+   },
+   event:function(){
+     var _this=this
+    $(".f_pagePrev").on("click",function(){
+      if(_this.pageNumber<=0)return;
+      _this.pageNumber--;
+      _this.pageShow();
+      
+    });
+    $(".f_pageNext").on("click",function(){
+      alert(_this.check())
+      if(_this.check())return;
+      if(_this.pageNumber>=(_this.page.length-1))return;
+      _this.pageNumber++;
+      _this.pageShow();
+    });
+   }
 
     }
-   /* function oPublish(argument) {
-      // body...
-    }
-    function oView(argument) {
-      // body...
-    }
-    $.post("http://120.76.138.42:8099/form.php/index/getform/id/3",function (data) {
-
-    })*/
-
  })();
  $view.init()
+ $view.event()
     </script>
 </html>
