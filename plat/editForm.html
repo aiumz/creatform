@@ -26,14 +26,14 @@
                 <div class="formBuilder-interim"></div>
                 <div class="formBuilder-example">
                     <div class="formBuilder-example-form">
-                        <div class="form-builder-main">
-                            <div class="sjmf-form-title clearfix text-center">
+                        <div id="postMain"  class="form-builder-main">
+                            <div type="header" class="sjmf-form-title clearfix text-center">
                                 <div class="formLogo"></div>
-                                <div class="title"><h2>fgfjfjh</h2>
+                                <div class="title"><h2 id="the-form-tit">fgfjfjh</h2>
                                 </div>
                                 <p class="main-form-desc"></p>
                             </div>
-                            <div id="main" class="form-component ui-sortable">
+                            <div id="main"   class="form-component ui-sortable">
 
                             </div>
                         </div>
@@ -352,9 +352,9 @@
                                 <li class="sjmf-utility" data-formType="pf" id="grade">
                                     <span class="sjmf-tit">评分</span><span class="formOption formOption_star"></span>
                                 </li>
-                                <li class="sjmf-utility" data-formType="sp" id="goods">
+                                <!--<li class="sjmf-utility" data-formType="sp" id="goods">
                                     <span class="sjmf-tit">商品</span><span class="formOption formOption_shopping"></span>
-                                </li>
+                                </li>-->
                                 <li class="sjmf-utility" data-formType="tp" id="img">
                                     <span class="sjmf-tit" >图片</span><span class="formOption formOption_picture"></span>
                                 </li>
@@ -685,28 +685,28 @@
                 })
         },
         changeBgcolor:function(color,self){
-            window.config.colorSet.bgColor=color;
+            window.config.formSet.theme.bgColor=color;
             $(".formBuilder-example").css("backgroundColor",color)
 
         },
         changeTiTtlecolor:function(color){
-            window.config.colorSet.headbgcolor=color;
+            window.config.formSet.theme.headbgcolor=color;
             $(".sjmf-form-title").css("backgroundColor",color)
         },
         changeLabelColor:function(color){
-            window.config.colorSet.labelcolor=color;
+            window.config.formSet.theme.labelcolor=color;
             $('#main').find('.like_li .title').css("color",color)
         },
         changeConbgcolor:function(color){
-            window.config.colorSet.conbgcolor=color;
+            window.config.formSet.theme.conbgcolor=color;
             $('#main').css("backgroundColor",color)
         },
         changeTiTtleFontcolor:function(color){
-            window.config.colorSet.headcolor=color;
+            window.config.formSet.theme.headcolor=color;
             $(".sjmf-form-title").find('h2').css("color",color)
         },
         changeDesColor:function(color){
-            window.config.colorSet.descolor=color;
+            window.config.formSet.theme.descolor=color;
             $('#main').find('.like_li .desc').css("color",color)
         },
         choseBgImg:function(argument) {
@@ -720,6 +720,11 @@
                     "backgroundRepeat":"no-repeat"
                     })
                  name.html(oInput.name)
+                window.config.formSet.theme.BgImg={
+                    src:src,
+                    position:"",
+                    repeat:"",
+                };
             })
         },
         choseTitleBgImg:function(argument) {
@@ -733,6 +738,11 @@
                     "backgroundRepeat":"no-repeat"
                 })
                 name.html(oInput.name)
+                 window.config.formSet.theme.TitleBgImg={
+                    src:src,
+                    position:"",
+                    repeat:"",
+                };
             })
         },
         choseLogBgImg:function(argument) {
@@ -747,6 +757,11 @@
                 })
                 /**/
                 name.html(oInput.name)
+                window.config.formSet.theme.LogBgImg={
+                    src:src,
+                    position:"",
+                    repeat:"",
+                };
             })
         },
 
@@ -853,26 +868,31 @@ styleManager.init()
         $(document).on('click','.sjmf-clolor-molder',function(){
             var _dataTheme = $(this).attr("data-theme");
             var _theme =[];
-            _theme =  _dataTheme.split(",");//_theme 顺序依次为 bgcolor，conbgcolor，descolor，headbgcolor，headcolor，，labelcolor，formwidth，labelsize，itempadding
-            window.config.colorSet.bgcolor =_theme[0];
-            $(".formBuilder-example").css("backgroundColor",_theme[0])
-            window.config.colorSet.conbgcolor =_theme[1];
-            $('#main').css("backgroundColor",_theme[1])
-            window.config.colorSet.descolor =_theme[2];
-            $('#main').find('.like_li .desc').css("color",_theme[2])
-            window.config.colorSet.headbgcolor =_theme[3];
-            $(".sjmf-form-title").css("backgroundColor",_theme[3])
-            window.config.colorSet.headcolor =_theme[4];
-            $(".sjmf-form-title").find('h2').css("color",_theme[4])
-            window.config.colorSet.labelcolor =_theme[5];
-            $('#main').find('.like_li .title').css("color",_theme[5]);
-
-            window.config.colorSet.formwidth =_theme[6];
-
-            window.config.colorSet.labelsize =_theme[7];
-
-            window.config.colorSet.itempadding =_theme[8];
+            _theme =  _dataTheme.split(",");//_theme 顺序依次为 bgcolor，conbgcolor，descolor，headbgcolor，headcolor，labelcolor，formwidth，labelsize，itempadding
+            var _them={
+                "bgcolor":_theme[0],
+                "conbgcolor":_theme[1],
+                "descolor":_theme[2],
+                "headbgcolor":_theme[3],
+                "headcolor":_theme[4],
+                "labelcolor":_theme[5],
+                "formwidth":_theme[6],
+                "labelsize":_theme[7],
+                "itempadding":_theme[8]
+            }
+            config.formSet.theme=_them;
+            config.setColor();
         })
+        config.setColor=function(){
+            if(!config.formSet.theme)return;
+            var theme=config.formSet.theme
+            $(".formBuilder-example").css("backgroundColor",theme.bgcolor)
+            $('#main').css("backgroundColor",theme.conbgcolor)
+            $('#main').find('.like_li .desc').css("color",theme.descolor)
+            $(".sjmf-form-title").css("backgroundColor",theme.headbgcolor)
+            $(".sjmf-form-title").find('h2').css("color",theme.headcolor)
+            $('#main').find('.like_li .title').css("color",theme.labelcolor);
+        }
         /*点击保存配色方案*/
         $(document).on('click','#sjmf-theme-set-name',function(){
             param= window.config.colorSet;

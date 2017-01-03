@@ -66,11 +66,11 @@
                     _this[_index].edit = oldValue;
                 })
                 $(".load").remove()
-                $("<input type='file' id='_displayInput'/>").appendTo($("body"))
+                $("<input type='file' id='_displayInput' style='display: none'/>").appendTo($("body"))
             }
         }
         allHTML.init()
-        console.log(allHTML)
+   
         /*所有组件原型*/
         function $Elem(ID) {
             return new $Elem.prototype.init(ID)
@@ -148,11 +148,14 @@
                 return this;
             },
             setRequired: function () {
-                this.editElem.find('input,textarea').addClass("required")
-                return this;
-            },
-            getRequired: function () {
-                this.editElem.find('.required').checked()
+                var checked=this.required;
+                 if(checked){
+                        this.mainElem.attr("isRequired",true).find(".com-required").show()
+
+                    }else{
+                        this.mainElem.attr("isRequired",false).find(".com-required").hide()
+                    }
+                this.editElem.find('.isRequired ').attr("checked", checked); 
                 return this;
             },
             getWidth: function () {
@@ -242,9 +245,7 @@
             },
             fileInput:$('<input type="file" name="img" id="" style="display:none"/>'),
             getUrl: function(oInput,fn) {
-                console.log(1)
                 oInput.trigger("click")
-
                 oInput.one("change",function(argument) {
                     /*   var oMyForm = new FormData();*/
                     var oFReader = new FileReader(), rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
@@ -268,12 +269,8 @@
                 })
                 this.editElem.find('.isRequired').on('click', function () {
                     var checked=$(this).is(':checked')
-                    alert(checked)
-                    if(checked){
-                        _this.mainElem.find(".com-required").attr("isRequired",true).show()
-                    }else{
-                        _this.mainElem.find(".com-required").attr("isRequired",false).hide()
-                    }
+                    _this.required=checked;
+                    _this.setRequired()
                 })
                 this.editElem.find('.el-md').on('click', function () {
                     _this.width='MD'
@@ -335,6 +332,39 @@
             /*单行输入*/
             input: function (obj) {
                 var a = $Elem("1")
+                a.extend({
+                    type:null,
+                    setType:function(type) {
+                        if(!this.type){
+                            this.type=type
+                        }
+                        this.mainElem.attr("type",this.type)
+                    },
+                    getConfig:function() {
+                        var _this=this;
+                        return {
+                            id:this.id,
+                            type:this.type,
+                            elemId:this.elemId,
+                            title:this.title,
+                            desc:this.desc,
+                            required:this.required,
+                            width:this.width,
+                            componenttype:this.componenttype
+                            }
+                    },
+                    setConfig:function(obj) {
+                            for(var i in obj){
+                                this[i]=obj[i]
+                            }
+                            this.setTitle()
+                            this.setWidth()
+                            this.setDesc()
+                            this.setRequired()
+                            this.setType()
+                            this.addEdit();
+                            }
+                })
                 a.componenttype="singleLine" ;
                 a.title="单行文本"
                 a.setTitle()
@@ -830,7 +860,7 @@
                         this.setWidth()
                         this.setDesc()
                         this.setRequired()
-                        console.log(obj.itemList)
+                      
                         for(var i=0;i<obj.itemList.length;i++){
 
                             this.addItem().setConfig(obj.itemList[i])
@@ -949,7 +979,7 @@
                     addItem: function () {
                         var a = new Item();
                         itemList.push(a)
-                        console.log(this.itemList)
+                   
                         this.mainElem.find(".labelList").append(a.mainPath)
                         this.editElem.find(".labelList").append(a.editPath)
                         this.addEdit()
@@ -985,7 +1015,7 @@
                         this.setDesc()
                         this.setRequired()
                         for(var i=0;i<obj.itemList.length;i++){
-                            console.log( this.addItem())
+                       
                             this.addItem().setConfig(obj.itemList[i])
                         }
                     },
@@ -1003,7 +1033,6 @@
             },
             /*图片多选*/
             imgMulit:function(bool) {
-                var itemList = [];
                 var a = $Elem("9")
                 a.componenttype="pictureCheckedBox"
                 a.title="图片多选"
@@ -1011,7 +1040,7 @@
                 config.allElem.push(a)
                 function Item() {
                     var __this = this;
-                    var name= "选项" + (itemList.length+1);
+                    var name= "选项" + (a.itemList.length+1);
                     this.id = (new Date()).getTime()
                     this.mainPath = $('<li class="img-radio">'
                         +' <div class="img-box"></div>'
@@ -1045,7 +1074,7 @@
                     this.setName = function () {
                         this.mainPath.find(".radioName").html(name)
                         this.editPath.find("textarea").val(name)
-                        console.log(this.src)
+                    
                         if(this.src){
                             this.editPath.find(".imgBtn").html("<img style='width:100%;height:100%' src="+this.src+" alt="+1+" />")
                             this.mainPath.find(".img-box").html("<img style='width:100%' src="+this.src+" alt="+1+" />")
@@ -1054,17 +1083,17 @@
                     this.editPath.find(".delete-radio").click(function () {
                         __this.mainPath.remove()
                         __this.editPath.remove()
-                        $.each(itemList, function (index, value) {
+                        $.each(a.itemList, function (index, value) {
                             if (value.id == __this.id) {
-                                itemList.splice(index, 1)
+                                a.itemList.splice(index, 1)
                                 return false
                             }
                         })
-                        itemList[itemList.length - 1].editPath.find(".add-radio").css("display", "inline-block")
+                        a.itemList[a.itemList.length - 1].editPath.find(".add-radio").css("display", "inline-block")
                         a.addEdit()
                     })
                     this.editPath.find(".add-radio").click(function () {
-                        $.each(itemList, function (index, value) {
+                        $.each(a.itemList, function (index, value) {
                             value.editPath.find(".add-radio").hide()
                         })
                         a.addItem()
@@ -1080,30 +1109,35 @@
                     })
                     this.editPath.find(".imgBtn").on("click",function() {
                         var _this=this;
-                        console.log($(this).next('input'))
+             
                         a.getUrl($(this).next('input'),function(src) {
                             __this.src=src;
                             $(_this).html("<img style='width:100%;height:100%' src="+src+" alt="+1+" />")
-                            console.log( __this.mainPath.find(".img-box"))
+                     
                             __this.mainPath.find(".img-box").html("<img style='width:100%' src="+src+"  />")
                         })
                     })
 
                 }
                 a.extend({//这里是组件独有属性的扩展函数
-                    itemList: itemList,
+                    itemList:[],
                     addItem: function () {
+                        console.log( this.itemList)
                         var a = new Item();
-                        itemList.push(a)
+                        
                         this.mainElem.find(".labelList").append(a.mainPath)
                         this.editElem.find(".labelList").append(a.editPath)
                         this.addEdit()
+
                         return a
                     },
                     getConfig:function() {
                         var obj=[];
                         for(var i in this.itemList){
+                            
+
                             obj.push(this.itemList[i].getConfig())
+                          
                         }
                         var _this=this;
                         return {
@@ -1118,8 +1152,11 @@
                         }
                     },
                     setConfig:function(obj) {
-                        for(var i in obj){
-                            this[i]=obj[i]
+                        var newObject = JSON.parse(JSON.stringify(obj));
+                        for(var i in newObject){
+                            if(i!=="itemList"){
+                                this[i]=newObject[i]
+                            }
                         }
                         this.setTitle()
                         this.setWidth()
@@ -1128,12 +1165,13 @@
                         for(var i=0;i<obj.itemList.length;i++){
                             this.addItem().setConfig(obj.itemList[i])
                         }
+                            
                     },
-                    beforAdd: function () {
-                        $.each(itemList, function (index, value) {
+                  /*  beforAdd: function () {
+                        $.each(this.itemList, function (index, value) {
                             value.setName()
                         })
-                    }
+                    }*/
 
                 })
                 if(!bool){
@@ -1244,7 +1282,7 @@
                         this.editElem.find(".starNum").on("change",function(argument) {
                             var num=$(this).val();
                             _this.editElem.find(".starNum>option:eq("+(num-3)+")").attr("selected",true);
-                            console.log(_this)
+                        
                             _this.initStar(num)
                         })
                     },
@@ -1451,6 +1489,7 @@
                 var a = $Elem("14")
                 a.componenttype="section"
                 a.title="分割线"
+
                 a.setTitle()
                 config.allElem.push(a)
                 return a;
@@ -1458,6 +1497,7 @@
             /*翻页*/
             pageTurning:function(argument) {
                 var a = $Elem("15")
+                a.mainElem.attr("type","pageTurning")
                 a.componenttype="page"
                 a.title="翻页"
                 a.setTitle()
@@ -1516,7 +1556,7 @@
         $("#signInput").on('click', function () {
 
             Elem.input()
-            console.log(config.allElem)
+        
         })
         $("#selectMeun").on('click', function () {
             Elem.select()
@@ -1530,6 +1570,7 @@
             var tagname = $(this).find(".sjmf-tit").html()
             var a=Elem.input()
             a.title=tagname;
+            a.setType(tagname)
             a.setTitle()
         })
         $("#number").on("click", function (argument) {
@@ -1572,12 +1613,11 @@
         $("#pageTurning").on("click", function () {
             Elem.pageTurning()
 
-            console.log(config.allElem)
+        
         })
-        /********************************************点击添加 end ************************************/
+/********************************************点击添加 end ************************************/
 
     }//start 结束
-
 
 //问题：
 //图片多选
@@ -1585,16 +1625,23 @@
 //多选
     function setFormConfig(argument) {
         $.post("http://120.76.138.42:8099/form.php/index/getform/id/1",function (data) {
-            console.log(data)
+            /*表单表头处理---start*/
+            $('#the-form-tit').text(data.title?data.title:"空白的表单");
+            $('#form-title').val(data.title?data.title:"空白的表单");
+            $('.main-form-desc').text(data.description);
+            $('#form-desc').val(data.description);
+           /* $('.formLogo').html()*/ //表单logo
+            //表单表头背景图
+            /*表单表头处理 ---end*/
             if(!data)return;
             if(!data.body)return;
             config.indexId=data.maxid+1||0;
+             config.formSet.theme=data.theme
             var data=data.body;
-
             for(var i in data){
                 if(!data[i].config)return;
                 var formConfg=JSON.parse(decodeURI(data[i].config))
-                console.log(formConfg)
+          
                 if(formConfg.elemId=="1"){
                     var a=Elem.input(formConfg.elemId)
                     a. setConfig(formConfg)
@@ -1655,6 +1702,7 @@
                     var a=Elem.pageTurning(formConfg.elemId)
                     a. setConfig(formConfg)
                 }
+                config.setColor()
 
             }
         })
@@ -1693,7 +1741,7 @@
                 "name":config_item.title,
                 "desc":config_item.desc,
                 "attribute ":"",
-                "config":JSON.stringify(config_item),
+                "config":encodeURI(JSON.stringify(config_item)),
             }
             obj["choice"]=choice;
             postConfig.push(obj)
@@ -1753,77 +1801,18 @@
             }
 
 
-            config.formSet.html=encodeURI($("#main").html())
-            config.formSet.theme=config.colorSet
-            config.formSet.body=postConfig;
-
-        }
+            config.formSet.html=encodeURI($("#postMain").html())
+            config.formSet.theme=config.formSet.theme
+            config.formSet.body=postConfig;}
         getFormConfig()
         console.log(config.formSet)
         $.post("http://120.76.138.42:8099/form.php/index/editform",{data:config.formSet},function (data) {
-            console.log(data)
+            alert(1211)
         })
 
     })
 
     /***************************************数据整理提交 end *****************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 })();

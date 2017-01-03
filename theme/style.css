@@ -1057,7 +1057,7 @@ li {
 }
 
 .form-component > .like_li {
-    background-color: #ffffff;
+    background-color: transparent;
     color: #333333;
     padding: 5px 14px;
     border: 1px solid transparent;
