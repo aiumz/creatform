@@ -1,0 +1,79 @@
+
+<div class="f-header">
+    <a class="blue1" href="#/creatForm"> <i class="bg_img sale_icon_17"></i> 返回 </a> <b></b> <span>新建表单</span><em class="bg_img sale_icon_18"></em><span>预览</span>
+</div>
+<div class="f-title-container">
+    <i class="f-title-decorate"></i>
+    <span class="f-title-big">表单预览</span>
+    <a class="f-rewrite-group" href="#/creatForm"><i class="f-rewrite"></i>编辑</a>
+</div>
+<div class="f-preview-container">
+    <div class="f-preview-title">{{form_name}}</div>
+    <div class="f-preview-content">
+        <div class="row">
+                <div ng-repeat="d in items track by d.id" class="col-sm-{{d.size}} " >
+                <!-- 单行文本 1 -->
+                    <div ng-if='d.type==1' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <p ng-bind="d.desc"></p>
+                        <input type="text" class="form-control" placeholder="请输入…">
+                    </div>
+                <!-- 多行文本 2 -->  
+                    <div ng-if='d.type==2' class="form-group">
+                        <label>{{d.title}}</label>
+                         <i class="f-require" ng-if="d.required==1">*</i>
+                        <p ng-bind="d.desc"></p>
+                        <textarea class="form-control"  rows="3" placeholder="请输入…"></textarea>
+                    </div>
+                <!-- 数字 3 -->
+                     <div ng-if='d.type==3' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <p ng-bind="d.desc"></p>
+                        <input type="number" class="form-control" placeholder="请输入…">
+                     </div>
+                <!-- 多选 4 -->
+                    <div ng-if='d.type==4' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <p ng-bind="d.desc"></p>
+                        <div class="checkbox" ng-repeat="d2 in d.children">
+                            <label>
+                                <input type="checkbox" ng-model="d2.isChecked" ng-true-value="1" ng-false-value="0">
+                                <span>{{d2.title}}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- 单选 5 -->
+                    <div ng-if='d.type==5' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <p ng-bind="d.desc"></p>
+                        <div class="radio" ng-repeat="d2 in d.children">
+                            <label>
+                                <input type="radio" ng-model="d.chosed" ng-value="d2.id">
+                                <span>{{d2.title}}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- 下拉菜单 6 -->
+                     <div ng-if='d.type==6' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <p ng-bind="d.desc"></p>
+                        <select class="form-control" ng-model="d.chosed" ng-options="x.id as x.title for x in d.children">
+                        </select>
+                    </div>  
+                    <!-- 下拉菜单 7 -->
+                     <div ng-if='d.type==7' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <p ng-bind="d.desc"></p>
+                        <input  class="form-control" ng-model="d.chosed"  d="d"   dataplug placeholder="请输入日期">
+                    </div>
+        </div>
+    </div> 
+    </div> 
+</div>
+

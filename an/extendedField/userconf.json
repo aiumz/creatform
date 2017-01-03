@@ -1,0 +1,72 @@
+{
+    "form_name":"",
+    
+    "items":[
+        {
+            "title": "单选",
+            "required": 1,
+            "imgSrc": "img/danxuan.png",
+            "type": 5,
+            "id": 1,
+            "maxChildId": 3,
+            "children": [
+                {
+                    "id": 1,
+                    "title": "选项1",
+                    "isChecked": 1,
+                    "addBtnShow": false
+                },
+                {
+                    "id": 2,
+                    "title": "选项2",
+                    "isChecked": 1,
+                    "addBtnShow": false
+                },
+                {
+                    "id": 3,
+                    "title": "选项3",
+                    "isChecked": "1",
+                    "addBtnShow": true
+                }
+            ]
+        },
+        {
+            "title": "日期",
+            "required": 1,
+            "imgSrc": "img/riqi.png",
+            "type": 7,
+            "id": 2
+        },
+        {
+            "title": "多选",
+            "required": 1,
+            "imgSrc": "img/duoxuan.png",
+            "type": 4,
+            "id": 3,
+            "maxChildId": 3,
+            "children": [
+                {
+                    "id": 1,
+                    "title": "选项1",
+                    "isChecked": 1,
+                    "addBtnShow": false
+                },
+                {
+                    "id": 2,
+                    "title": "选项2",
+                    "isChecked": 1,
+                    "addBtnShow": false
+                },
+                {
+                    "id": 3,
+                    "title": "选项3",
+                    "isChecked": "1",
+                    "addBtnShow": true
+                }
+            ]
+        }
+    ],
+    "extend_list":[
+
+    ]
+}

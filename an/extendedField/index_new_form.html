@@ -1,0 +1,27 @@
+
+<div class="f-header">    
+<a class="blue1" onclick="history.go(-1)"> <i class="bg_img sale_icon_17"></i> 返回 </a> <b></b> <span>新建表单</span>
+</div>
+
+<div class="f-center-container">
+    <div class="m_l_30px w_500">
+        <div class="row">
+            <div class="form-group col-xs-12">
+                <label>表单名称</label>
+                <input ng-model="form_name" type="text" class="form-control"  placeholder="请输入表单名称"></div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label>字段列数</label>
+                    <select ng-model="row_style"  class="form-control" >
+                        <option value="1">独占一列</option>
+                        <option value="2">两列</option>
+                        <option value="3">三列</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="f-bottom-but">
+    <a ng-click="goCreatForm()" class="btn btn-primary btn-sm yahei">使用空白表单</a>
+    </div>
+</div>

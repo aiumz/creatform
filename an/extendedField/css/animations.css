@@ -1,0 +1,85 @@
+
+.view-container {
+  position: relative;
+}
+.view-frame.ng-enter, .view-frame.ng-leave {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* .view-frame.ng-enter {
+  -webkit-animation: 0.5s fade-in;
+  -moz-animation: 0.5s fade-in;
+  -o-animation: 0.5s fade-in;
+  animation: 0.5s fade-in;
+  z-index: 100;
+} */
+
+/* .view-frame.ng-leave {
+  -webkit-animation: 0.5s fade-out;
+  -moz-animation: 0.5s fade-out;
+  -o-animation: 0.5s fade-out;
+  animation: 0.5s fade-out;
+  z-index:99;
+} */
+
+.f-center-left{
+  position: absolute;
+} 
+.view-frame.ng-enter {
+  -webkit-animation: 0.5s fade-ins;
+  -moz-animation: 0.5s fade-ins;
+  -o-animation: 0.5s fade-ins;
+  animation: 0.5s fade-ins;
+  z-index: 100;
+}
+
+.view-frame.ng-leave {
+  -webkit-animation: 0.5s fade-outs;
+  -moz-animation: 0.5s fade-outs;
+  -o-animation: 0.5s fade-outs;
+  animation: 0.5s fade-outs;
+  z-index:99;
+} 
+@keyframes fade-outs{
+  from { transform: translate3d(0,0,0); }
+  to { transform: translate3d(-100%,0,0); }
+}
+@keyframes fade-ins {
+  from { transform: translate3d(100%,0,0); }
+  to { transform: translate3d(0,0,0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@-moz-keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@-webkit-keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@-moz-keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@-webkit-keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.ngdialog-content{
+  padding:0!important;
+}
+.ngdialog-overlay{
+  background:none;
+}

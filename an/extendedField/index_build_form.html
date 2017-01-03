@@ -1,0 +1,285 @@
+<div class="f-header">
+    <a class="blue1" ng-click="goPrev()"> <i class="bg_img sale_icon_17"></i> 返回 </a> <b></b> <span>新建表单</span><em class="bg_img sale_icon_18"></em><span>新建空白表单</span>
+</div>
+<div class="f-title-container">
+    <div class="f-buttons">
+        <button type="button" class="btn  btn-sm" ng-class="{'btn-primary':!style.isEdit}" ng-click="style.isEdit=false" >字段</button>
+        <button type="button" class="btn btn-default btn-sm" ng-class="{'btn-primary':style.isEdit}" ng-click="style.isEdit=true" >编辑组件</button>
+    </div>
+    <div class="f-title">标题:&nbsp;<span>{{form_name}}</span></div>
+</div>
+<div class="f-center-container">
+<!-- 字段 -->
+    <div class="f-center-left" ng-hide="style.isEdit" styleleft stylecollapse>
+        <!--   系统预置字段 -->
+        <div class="f-center-panel">
+            <div class="f-center-title">
+                <i class="f-triangle"></i>
+                <span>系统预置字段</span>
+            </div>
+            <div class="f-center-content" >
+                <div ng-repeat="d in systemDefult" class="f-form-group" ng-click="addPlug(d)">
+                    <span>{{d.title}}</span><i class="f-require" ng-if="d.required==1">*</i>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="{{d.imgSrc}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 扩展字段 -->
+        <div class="f-center-panel">
+            <div class="f-center-title">
+                <i class="f-triangle"></i>
+                <span>扩展字段</span>
+                <em class="f-add" stylemodel></em>
+            </div>
+            <div class="f-center-content border_b_none ng-hide" >
+                <div class="f-form-group" ng-repeat="d in extend.list" ng-click="addPlug(d)">
+                    <span>{{d.title}}</span>
+                    <i class="f-delete" ng-click="extend.delPlug(d)"></i>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="{{d.imgSrc}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--编辑组件 -->
+    <div class="f-center-left f-padding-20" ng-show="style.isEdit" styleleft>
+        <div class="alert alert-warning" role="alert" ng-if="!target">请选择组件！</div>
+        <setion id="f-single" ng-if="target">
+            <div class="form-group">
+                <label>属性名称</label>
+                <input ng-model="target.title" type="text" class="form-control" placeholder="请输入…">
+            </div>
+            <div class="form-group">
+                <label>属性ID</label>
+                <input  ng-model="target.id" type="text" class="form-control" value="20161208" disabled>
+            </div>
+            <div class="form-group">
+                <label>属性描述</label>
+                <input  ng-model="target.desc" type="text" class="form-control" placeholder="请输入…">
+            </div>
+            <div class="form-group">
+                <label>是否必填</label>
+                <div>
+                    <label class="radio-inline">
+                        <input ng-model="target.required"  type="radio" name="radio0" value=1> 是
+                    </label>
+                    <label class="radio-inline">
+                        <input ng-model="target.required" type="radio" name="radio0"  value=0> 否
+                    </label>
+                </div>
+            </div>
+            <div class="form-group" ng-show="target.type==1||(target.type==2)||(target.type==3)">
+                <label>字符长度</label>
+                <input ng-model="target.strLen" onlynumber type="number" class="form-control" placeholder="请输入数字…">
+            </div>
+            <div class="form-group" ng-if="target.type!=2">
+                <label>字段占符</label>
+                <div>
+                    <label class="radio-inline">
+                        <input ng-model="target.size" type="radio" name="radio2" value="4"> 一列
+                    </label>
+                    <label class="radio-inline">
+                        <input ng-model="target.size" type="radio" name="radio2"  value="8"> 两列
+                    </label>
+                    <label class="radio-inline">
+                        <input ng-model="target.size" type="radio" name="radio2"  value="12"> 三列
+                    </label>
+                </div>
+            </div>
+            <!-- 多选 -->
+            <div class="form-group" ng-if="target.type==4">
+                <label>字段占符</label>
+                <select class="form-control">
+                    <option value="1">一列</option>
+                    <option value="2">两列</option>
+                    <option value="3">三列</option>
+                </select>
+            </div>
+            <div class="form-group" ng-if="target.type==4">
+                <label>选项占符</label>
+                <select class="form-control">
+                    <option value="1">一列</option>
+                    <option value="2">两列</option>
+                    <option value="3">三列</option>
+                    <option value="4">四列</option>
+                    <option value="5">五列</option>
+                    <option value="6">六列</option>
+                </select>
+            </div>
+            <div class="form-group" ng-show="target.type==4">
+                <label>多选选项设置</label><i class="f-add" ng-click="addChildren(d2)"></i>
+                <div>
+                    <div class="checkbox" ng-repeat="d2 in target.children">
+                        <input type="checkbox" ng-model="d2.isChecked"  ng-true-value="1" ng-false-value="0" >
+                        <input type="text" ng-model="d2.title"  class="form-control input-sm">
+                        <i class="f-delete-2" ng-show="$middle" ng-click="delChildren(d2)"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-show="target.type==5">
+                <label>单选选项设置</label><i class="f-add" ng-click="addChildren1(d2)"></i>
+                <div>
+                    <div class="checkbox" ng-repeat="d2 in target.children">
+                        <input type="radio" name="editRadio" ng-model="target.chosed" ng-value="d2.id" >
+                        <input type="text" ng-model="d2.title"  class="form-control input-sm">
+                        <i class="f-delete-2" ng-show="$middle" ng-click="delChildren1(d2)"></i>
+                    </div>
+                </div>
+            </div>   
+            <div class="form-group" ng-show="target.type==6">
+                <label>下拉菜单选项设置</label><i class="f-add" ng-click="addChildren1(d2)"></i>
+                <div>
+                    <div class="checkbox" ng-repeat="d2 in target.children">
+                        <input type="radio" name="editRadio" ng-model="target.chosed" ng-value="d2.id" >
+                        <input type="text" ng-model="d2.title"  class="form-control input-sm">
+                        <i class="f-delete-2" ng-show="$middle" ng-click="delChildren1(d2)"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-show="target.type==7">
+                <label>日期选项设置</label>
+                <div>
+                    
+                </div>
+            </div>
+        </setion>
+    </div>
+
+<!-- 表单内容 -->
+    <div class="f-center-right">
+        <div class="f-right-title">属性名称</div>
+        <div class="f-inputbox-container" stylecenter>
+            <div class="row" ui-sortable="sortableOptions" resetWidth ng-model="items">
+                <div ng-repeat="d in items track by d.id" class="col-sm-{{d.size}} f-drag" ng-click="changeTarget(d)" forange>
+                <!-- 单行文本 1 -->
+                    <div ng-if='d.type==1' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <i class="f-delete" ng-click="delPlug(d)"></i>
+                        <p ng-bind="d.desc"></p>
+                        <input readonly="true" type="text" class="form-control" placeholder="请输入…">
+                    </div>
+                <!-- 多行文本 2 -->  
+					<div ng-if='d.type==2' class="form-group">
+	                    <label>{{d.title}}</label>
+                         <i class="f-require" ng-if="d.required==1">*</i>
+                        <i class="f-delete" ng-click="delPlug(d)"></i>
+                        <p ng-bind="d.desc"></p>
+	                    <textarea readonly="true" class="form-control"  rows="3" placeholder="请输入…"></textarea>
+	                </div>
+				<!-- 数字 3 -->
+	            	 <div ng-if='d.type==3' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <i class="f-delete" ng-click="delPlug(d)"></i>
+                        <p ng-bind="d.desc"></p>
+                        <input readonly="true" type="number" class="form-control" placeholder="请输入…">
+                     </div>
+         		<!-- 多选 4 -->
+     				<div ng-if='d.type==4' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <i class="f-delete" ng-click="delPlug(d)"></i>
+                        <p ng-bind="d.desc"></p>
+                        <div class="checkbox" ng-repeat="d2 in d.children">
+                            <label>
+                                <input readonly="true" type="checkbox" ng-model="d2.isChecked" ng-true-value="1" ng-false-value="0">
+                                <span>{{d2.title}}</span>
+                            </label>
+                        </div>
+                    </div>
+					<!-- 单选 5 -->
+                    <div ng-if='d.type==5' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <i class="f-delete" ng-click="delPlug(d)"></i>
+                        <p ng-bind="d.desc"></p>
+                        <div class="radio" ng-repeat="d2 in d.children">
+                            <label>
+                                <input readonly="true" type="radio" ng-model="d.chosed" ng-value="d2.id">
+                                <span>{{d2.title}}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- 下拉菜单 6 -->
+                     <div ng-if='d.type==6' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <i class="f-delete" ng-click="delPlug(d)"></i>
+                        <p ng-bind="d.desc"></p>
+                        <select  class="form-control" ng-model="d.chosed" ng-options="x.id as x.title for x in d.children">
+                        </select>
+                    </div>  
+                    <!-- 日期7 -->
+                     <div ng-if='d.type==7' class="form-group">
+                        <label>{{d.title}}</label>
+                        <i class="f-require" ng-if="d.required==1">*</i>
+                        <i class="f-delete" ng-click="delPlug(d)"></i>
+                        <p ng-bind="d.desc"></p>
+                        {{d.chosed}}
+                        <input   class="form-control" ng-model="d.chosed" placeholder="请输入日期">
+                    </div>
+            </div>
+        </div>
+        <div class="f-right-buttons">
+            <button ng-click="goView()" type="button" class="btn btn-primary btn-sm">预览</button>
+            <button ng-click="saveForm()" type="button" class="btn btn-primary btn-sm">保存</button>
+            <button ng-click="closeForm()" type="button" class="btn btn-default btn-sm">关闭</button>
+        </div>
+    </div>
+</div>
+</div>
+<!-- 编辑拓展字段 -->
+<div class="modal fade " role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title">添加字段</h5>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-left">
+                    <div ng-repeat="d in extend.origin" class="f-form-group" ng-click="extend.addOrigin(d)">
+                        <div class="f-imgContainer" title="点击拖动到右侧">
+                            <img src="{{d.imgSrc}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body-right">
+                    <div class="f-right-title">属性名称</div>
+                    <!--编辑组件 -->
+                    <div class="modal-right-content" ng-if="extend.target">
+                        <setion>
+                            <div class="form-group">
+                                <label>属性名称</label>
+                                <input ng-model="extend.target.title" type="text" class="form-control" placeholder="请输入…">
+                            </div>
+                            <div class="form-group">
+                                <label>属性ID</label>
+                                <input  ng-model="extend.target.id" type="text" class="form-control" value="20161208" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>属性描述</label>
+                                <input  ng-model="extend.target.desc" type="text" class="form-control" placeholder="请输入…">
+                            </div>
+                        </setion>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" ng-if="!!extend.target" ng-click="extend.saveOrigin()">确定</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+<script src="js/form.js"></script>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>云笔记-L2Cplat客户关系管理系统。</title>
+    <meta name="description" content="L2Cplat客户关系管理系统。" />
+    <meta name="keywords" content="CRM, ERP, EWP" />
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="../../../plugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../plugin/bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../plugin/bootstrap/css/font-src.css">
+    <!-- 公共网站头部 -->
+    <link rel="stylesheet" type="text/css" href="../../../themes/default/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../../themes/default/css/icon.css" />
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../plugin/bootstrap/js/bootstrap.min.js"></script><script src="../../../js/index.js"></script>
+    <!-- easyui-->
+    <link rel="stylesheet" type="text/css" href="../../../plugin/easyui-1.4/themes/gray/easyui.css" />
+    <script type="text/javascript" src="../../../plugin/easyui-1.4/jquery.easyui.min.js"></script>
+    <script>
+        $(function(){
+            $('#selectPart').change(function(){
+                var item = $(this).val();
+                if(item == '公共资料库'){
+                    $(this).next().tree({
+                        url:'../publicLibrary/tree1.json'
+                    });
+                }else{
+                    $(this).next().tree({
+                        url:'/Template/public/my_km.json'
+                    });
+                }
+
+            })
+        })
+
+    </script>
+</head>
+<body style="height:100%;"  class="form_body_colse_brede">
+<div class="easyui-layout border_none" fit="true">
+    <div data-options="region:'west',split:true,border:false" style="width:330px;padding: 10px;" >
+        <select  class="form-control" id="selectPart">
+            <option>公共资料库</option>
+            <option>企业知识库</option>
+        </select>
+        <ul id="tt" style="height: 312px;overflow: auto;margin-top: 5px;" class="easyui-tree" data-options="url:'../publicLibrary/tree1.json',singleSelect:1,method:'get',animate:true,checkbox:true"></ul>
+    </div>
+    <div data-options="region:'center',border:false" style="border-left:1px solid #cecece;" class="sale">
+        <div class="tree_icon_num" style="width:100%">
+            <table class="table selected_member" width="100%" style="border:0;">
+                <thead>
+                <tr>
+                    <th width="80" align="left" style="padding:6px;">已选分类</th>
+                    <th align="left" width="60" style="padding:6px;">&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="text-align:left;"><i class="tree-file "></i>政治</td>
+                    <td><i class="btm_icon_05"></i></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;"><i class="tree-file "></i>军事</td>
+                    <td><i class="btm_icon_05"></i></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;"><i class="tree-file "></i>军事2</td>
+                    <td><i class="btm_icon_05"></i></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div data-options="region:'south',border:false" style="height:50px; text-align:right; overflow:hidden">
+        <div class="ceng_bottom_but">
+            <button id="ok_009" type="submit" class="btn btn-primary btn-sm yahei">确定</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-default btn-sm yahei">关闭</button>
+        </div>
+    </div>
+</div>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="../../../plugin/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../../../plugin/validate/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../plugin/validate/jquery.metadata.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../../../plugin/easyui-1.4/jquery.easyui.min.js"></script>
+
+</body>
+</html>

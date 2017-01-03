@@ -1,0 +1,15 @@
+<div class="panel panel-primary">
+  <div class="panel-heading" >
+  		{{info.header}} 
+	  <span ng-click="closeThisDialog()" style="right: 10px;position: absolute;cursor: pointer;">x</span>
+  </div>
+  <div class="panel-body">
+  {{info.content}}
+  </div>
+  <div class="panel-footer" ng-if="info.footer.length>0">
+  	<p class="clearfix">
+	  <button type="button" ng-click="myclose(false)" class="btn btn-default btn-xs pull-right" style="margin-right:10px">{{info.footer[1]}}</button>
+	  <button type="button" ng-click="myclose(true)" class="btn btn-primary btn-xs pull-right" style="margin-right:10px">{{info.footer[0]}}</button>
+	</p>
+  </div>
+</div>

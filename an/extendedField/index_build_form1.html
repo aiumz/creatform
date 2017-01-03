@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+</head>
+<body>
+<div class="f-header">
+    <a class="blue1" onclick="history.go(-1)"> <i class="bg_img sale_icon_17"></i> 返回 </a> <b></b> <span>新建表单</span><em class="bg_img sale_icon_18"></em><span>新建空白表单</span>
+</div>
+<div class="f-title-container">
+    <div class="f-buttons">
+        <button type="button" class="btn btn-primary btn-sm">字段</button>
+        <button type="button" class="btn btn-default btn-sm">编辑组件</button>
+    </div>
+    <div class="f-title">标题</div>
+</div>
+<div class="f-center-container">
+    <div class="f-center-left">
+        <div class="f-center-panel">
+            <div class="f-center-title">
+                <i class="f-triangle"></i>
+                <span>系统预置字段</span>
+            </div>
+            <div class="f-center-content">
+                <div class="f-form-group">
+                    <span>标题</span><i class="f-require">*</i>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/danhanwenben.png" alt="">
+                    </div>
+                </div>
+                <div class="f-form-group">
+                    <span>所属分类</span><i class="f-require">*</i>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/xialacaidan.png" alt="">
+                    </div>
+                </div>
+                <div class="f-form-group">
+                    <span>相关分类</span>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/danhanwenben.png" alt="">
+                    </div>
+                </div>
+                <div class="f-form-group">
+                    <span>关键字</span>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/danhanwenben.png" alt="">
+                    </div>
+                </div>
+                <div class="f-form-group">
+                    <span>相关行业</span>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/xialacaidan.png" alt="">
+                    </div>
+                </div>
+                <div class="f-form-group">
+                    <span >摘要</span>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/duohangwenben.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="f-center-panel">
+            <div class="f-center-title">
+                <i class="f-triangle"></i>
+                <span>扩展字段</span>
+                <em class="f-add" id="f-modal-btn"></em>
+            </div>
+            <div class="f-center-content border_b_none">
+                <div class="f-form-group">
+                    <span>扩展字段一</span>
+                    <i class="f-delete"></i>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/danxuan.png" alt="">
+                    </div>
+                </div>
+                <div class="f-form-group">
+                    <span>扩展字段二</span>
+                    <i class="f-delete"></i>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/riqi.png" alt="">
+                    </div>
+                </div>
+                <div class="f-form-group">
+                    <span>扩展字段三</span>
+                    <i class="f-delete"></i>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/duoxuan-.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="f-center-left f-padding-20">
+        <!--单行文本-->
+        <setion id="f-single">
+            <div class="form-group">
+                <label>属性名称</label>
+                <input type="text" class="form-control" placeholder="请输入…">
+            </div>
+            <div class="form-group">
+                <label>属性ID</label>
+                <input type="text" class="form-control" value="20161208" disabled>
+            </div>
+            <div class="form-group">
+                <label>属性描述</label>
+                <input type="text" class="form-control" placeholder="请输入…">
+            </div>
+            <div class="form-group">
+                <label>是否必填</label>
+                <div>
+                    <label class="radio-inline">
+                        <input type="radio" name="radio0" value="1"> 是
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radio0"  value="2"> 否
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>字符长度</label>
+                <input type="number" class="form-control" placeholder="请输入数字…">
+            </div>
+            <div class="form-group">
+                <label>字段占符</label>
+                <div>
+                    <label class="radio-inline">
+                        <input type="radio" name="radio2" value="1"> 一列
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radio2"  value="2"> 两列
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radio2"  value="3"> 三列
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>多选选项设置</label>
+                <div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="1">
+                        <input type="text" class="form-control input-sm">
+                        <i class="f-delete-2"></i>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="2">
+                        <input type="text" class="form-control input-sm">
+                        <i class="f-delete-2"></i>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="3">
+                        <input type="text" class="form-control input-sm">
+                        <i class="f-add"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>单选选项设置</label>
+                <div>
+                    <div class="checkbox">
+                        <input type="radio" name="f-radio" value="1">
+                        <input type="text" class="form-control input-sm">
+                        <i class="f-delete-2"></i>
+                    </div>
+                    <div class="checkbox">
+                        <input type="radio" name="f-radio" value="2">
+                        <input type="text" class="form-control input-sm">
+                        <i class="f-delete-2"></i>
+                    </div>
+                    <div class="checkbox">
+                        <input type="radio" name="f-radio" value="3">
+                        <input type="text" class="form-control input-sm">
+                        <i class="f-add"></i>
+                    </div>
+                </div>
+            </div>
+        </setion>
+    </div>
+    <div class="f-center-right">
+        <div class="f-right-title">属性名称</div>
+        <div class="f-inputbox-container">
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>单行文本</label>
+                        <i class="f-delete"></i>
+                        <input type="text" class="form-control" placeholder="请输入…">
+                    </div>
+                    
+               </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>单行文本</label>
+                        <i class="f-delete"></i>
+                        <input type="text" class="form-control" placeholder="请输入…">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>单行文本</label>
+                        <i class="f-delete"></i>
+                        <input type="text" class="form-control" placeholder="请输入…">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>单行文本</label>
+                        <i class="f-delete"></i>
+                        <input type="text" class="form-control" placeholder="请输入…">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>单行文本</label>
+                        <i class="f-delete"></i>
+                        <input type="text" class="form-control" placeholder="请输入…">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>单行文本</label>
+                        <i class="f-delete"></i>
+                        <input type="text" class="form-control" placeholder="请输入…">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>多行文本</label>
+                        <i class="f-delete"></i>
+                        <textarea class="form-control"  rows="3" placeholder="请输入…"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>数字</label>
+                        <i class="f-delete"></i>
+                        <input type="number" class="form-control" placeholder="请输入…">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>多选</label>
+                        <i class="f-delete"></i>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="1">
+                                <span>option1</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="2">
+                                <span>option2</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="3">
+                                <span>option3</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>单选</label>
+                        <i class="f-delete"></i>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="radio1"  value="option1">
+                                <span>option1</span>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="radio1"  value="option2">
+                                <span>option2</span>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="radio1"  value="option3">
+                                <span>option3</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>下拉菜单</label>
+                        <i class="f-delete"></i>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="f-right-buttons">
+            <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='index_form_preview.html'">预览</button>
+            <button type="button" class="btn btn-primary btn-sm">保存</button>
+            <button type="button" class="btn btn-default btn-sm">关闭</button>
+        </div>
+    </div>
+</div>
+<!--modal -->
+<div class="modal fade " role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title">添加字段</h5>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-left">
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/danxuan.png" alt="">
+                    </div>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/danhanwenben.png" alt="">
+                    </div>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/duoxuan-.png" alt="">
+                    </div>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/duohangwenben.png" alt="">
+                    </div>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/riqi.png" alt="">
+                    </div>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/shuzi-.png" alt="">
+                    </div>
+                    <div class="f-imgContainer" title="点击拖动到右侧">
+                        <img src="img/xialacaidan.png" alt="">
+                    </div>
+                </div>
+                <div class="modal-body-right">
+                    <div class="f-right-title">属性名称</div>
+                    <div class="modal-right-content">
+                        <div class="form-group">
+                            <label>单行文本</label>
+                            <input type="text" class="form-control" placeholder="请输入…">
+                        </div>
+                        <div class="form-group">
+                            <label>多行文本</label>
+                            <textarea class="form-control"  rows="3" placeholder="请输入…"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>数字</label>
+                            <input type="number" class="form-control" placeholder="请输入…">
+                        </div>
+                        <div class="form-group">
+                            <label>多选</label>
+                            <i class="f-delete"></i>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="1">
+                                    <span>option1</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="2">
+                                    <span>option2</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="3">
+                                    <span>option3</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>单选</label>
+                            <i class="f-delete"></i>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="radio1"  value="option1">
+                                    <span>option1</span>
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="radio1"  value="option2">
+                                    <span>option2</span>
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="radio1"  value="option3">
+                                    <span>option3</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>下拉菜单</label>
+                            <i class="f-delete"></i>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm">确定</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/form.js"></script>
+</html>

@@ -1,0 +1,377 @@
+/*图标*/
+.f-delete,.f-add,.f-triangle,.f-rewrite,.f-delete-2{
+    background-image: url(../../../../themes/default/images/bg.png);
+}
+.f-delete{
+    width: 11px;
+    height: 12px;
+    background-position: -445px -61px;
+    float: right;
+    margin: 3px 24px 0 0;
+    display: none;
+    cursor: pointer;
+}
+.f-center-right .f-delete{
+    margin: 3px 0 0 0;
+}
+.f-add{
+    width:15px;
+    height:15px;
+    background-position:-479px -922px;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    left: 164px;
+    cursor: pointer;
+}
+.f-add-2{
+    width:12px;
+    height:12px;
+    background-position:-403px -1044px;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    left: 168px;
+    cursor: pointer;
+}
+.f-delete-2{
+    width: 11px;
+    height: 12px;
+    background-position: -445px -61px;
+    display: inline-block;
+    position: relative;
+    top:2px;
+    left: 5px;
+    cursor: pointer;
+}
+.f-add:hover{
+    background-position:-499px -922px;
+}
+.f-add-2:hover{
+    background-position:-403px -1029px;
+}
+.f-triangle{
+    width: 13px;
+    height: 8px;
+    background-position: -285px -26px;
+    display: inline-block;
+    float: left;
+    margin-top: 12px;
+    cursor: pointer;
+}
+.f-rewrite{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-position: -7px -220px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+.f-header{
+    padding: 10px 10px 0 20px;
+    height: 44px;
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
+    color: #999;
+    font-size: 14px;
+}
+.f-header a{
+    text-decoration: none;
+    padding: 0 9px 0 0;
+    cursor: pointer;
+}
+.f-header b{
+    border: 1px solid #e2e2e2;
+    width: 1px;
+}
+.f-header span{
+    padding-left: 6px;
+    padding-bottom: 0;
+}
+.f-header em{
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: -3px;
+}
+.f-title-container{
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+    line-height: 44px;
+}
+.f-buttons,.f-center-left{
+    width: 326px;
+    border-right:1px solid #ccc;
+    float:left;
+}
+.f-buttons{
+    padding: 0 10px 0 20px;
+    height: 44px;
+}
+.f-buttons button{
+    margin-top: -4px;
+}
+.f-title{
+    float:left;
+    line-height: 44px;
+    color: #000;
+    margin-left: 20px;
+    font-weight: bolder;
+}
+.f-right-title,.f-center-title{
+    height: 30px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ccc;
+    padding-left: 20px;
+}
+.f-center-title{
+    cursor: pointer;
+}
+.f-right-title{
+    line-height: 30px;
+}
+.f-center-title .fold{
+    width: 13px;
+    height: 13px;
+    background-position: -273px -26px;
+    margin-top: 9px;
+}
+
+.f-center-title span{
+    position: relative;
+    top: 6px;
+    left: 5px;
+}
+.f-center-content{
+    padding: 0 0 20px 38px;
+    border-bottom:1px solid #ccc ;
+}
+.f-form-group{
+    width: 250px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.f-form-group:hover .f-delete{
+    display: block;
+}
+.f-imgContainer{
+    width: 225px;
+    height: 34px;
+    border:1px dashed #999;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+.f-form-group:hover .f-imgContainer,.f-imgContainer:hover{
+    background-color: #edf6fe;
+    border-style: solid;
+}
+.f-require{
+    color: #ff0000;
+    font-size: 12px;
+    margin-left: 3px;
+}
+.f-center-right{
+    width:calc(100% - 326px);
+    float: right;
+}
+.f-center-right .form-group{
+    padding-top: 6px;
+}
+.f-center-right .row{
+    margin: 0;
+}
+.f-center-right .row .col-sm-12{
+    border:1px solid #fff;
+    padding:10px 15px 15px 20px;
+    border-bottom:1px dashed #ccc;
+}
+.f-center-right .row .col-sm-4,.f-center-right .row .col-sm-8{
+    border-left:1px dashed #fff;
+    border-top:1px dashed #fff;
+    padding:10px 15px 15px 20px;
+}
+.f-center-right .row .col-sm-4,.f-center-right .row .col-sm-8{
+    border-right:1px dashed #ccc;
+    border-bottom:1px dashed #ccc;
+}
+.f-center-right .row .col-sm-12:hover{
+    border-top: 1px dashed #f5d6bc;
+    border-bottom: 1px dashed #f5d6bc;
+}
+.f-center-right .row .col-sm-4:hover,.f-center-right .row .col-sm-8:hover{
+    border: 1px dashed #f5d6bc;
+}
+.f-center-right .row .col-sm-12:hover .f-delete,.f-center-right .row .col-sm-4:hover .f-delete,.f-center-right .row .col-sm-8:hover .f-delete{
+    display: block;
+}
+.radio label, .checkbox label{
+    padding-left: 0;
+}
+.checkbox label span,.radio label span{
+    position: relative;
+    top:-2px;
+    font-weight: normal;
+}
+.checkbox,.radio{
+    height: 26px;
+}
+.f-inputbox-container,.f-center-left{
+    overflow: auto;
+}
+.f-right-buttons{
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    height: 75px;
+    border-top:1px solid #ccc;
+    background-color: #fff;
+    padding: 20px 0 0 20px;
+}
+.f-orange{
+    background-color: #fff9cc;
+}
+.f-padding-20{
+    padding: 0 20px 0;
+}
+.f-center-left .form-group{
+    padding-top: 15px;
+}
+.f-center-left .form-group label{
+    font-weight: bolder;
+}
+.radio-inline, .checkbox-inline{
+    padding: 0 20px 0 0;
+}
+.f-bottom-but{
+    margin-top: 200px;
+    padding: 20px 0 0 20px;
+    border-top:1px solid #ccc;
+}
+.f-title-decorate{
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    height: 14px;
+    border-right: 3px solid #007aff;
+    margin: 5px 5px 0 20px;
+}
+.f-title-big{
+    font-weight: bolder;
+    font-size: 16px;
+}
+.f-rewrite-group{
+    float: right;
+    font-size: 14px;
+    color: #007aff;
+    text-decoration: none;
+    cursor: pointer;
+    padding-right: 13px;
+}
+
+
+/*预览页面*/
+.f-preview-title{
+    height: 60px;
+    font-size: 16px;
+    font-weight:bolder;
+    line-height: 60px;
+    text-align: center;
+}
+.f-preview-container{
+    width: 100%;
+    overflow: auto;
+    padding: 0 20px 0;
+}
+.f-preview-container .form-group label{
+    font-weight: bolder;
+}
+.f-preview-container .row{
+    margin:0;
+}
+
+/*编辑组件*/
+.f-padding-20 .checkbox label span,.f-padding-20 .radio label span{
+    position: relative;
+    top:-2px;
+    font-weight: normal;
+}
+.f-padding-20 .checkbox,.f-padding-20 .radio{
+    padding-top: 10px;
+    height: 40px;
+}
+.f-padding-20 .input-sm{
+    width: 88%;
+    height: 26px;
+}
+.f-padding-20 .f-add{
+    top:4px;
+    left:8px;
+}
+.f-drag{
+    cursor: move;
+    height: 125px;
+    overflow: auto;
+}
+
+
+/*模态框*/
+.modal-content{
+    border-radius: 4px;
+}
+.modal-body{
+    padding: 0;
+    height: 400px;
+}
+.modal-header{
+    padding: 5px 15px;
+    background-color: #f6f6f6;
+    border-radius: 4px 4px 0 0;
+}
+.modal-title{
+    font-weight: bolder;
+}
+.modal-footer{
+    padding: 10px 15px;
+    background-color: #f6f6f6;
+    border-radius:0 0 4px 4px;
+}
+.modal-body-left{
+    width: 256px;
+    height: 400px;
+    border-right: 1px solid #ccc;
+    float: left;
+}
+.modal-body-right{
+    width: calc(100% - 256px);
+    height: 400px;
+    float: left;
+}
+.modal-body-left .f-imgContainer{
+    margin:15px auto 0;
+}
+.modal-right-content{
+    padding: 0 20px 20px;
+    height: 370px;
+    overflow: auto;
+}
+.modal-right-content .form-group{
+    padding-top:10px;
+}
+
+/* 加载 */
+.f-loading{
+    position: fixed;
+    top: 40%;
+    left:50%;
+    transform: translate3d(-50%,-50%,0);
+}
+.f-loading p{
+   text-align: center;
+   font-size: 14px;
+   font-weight: 400;
+   margin-top: 20px
+}

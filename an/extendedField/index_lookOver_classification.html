@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>云笔记-L2Cplat客户关系管理系统。</title>
+    <meta name="description" content="L2Cplat客户关系管理系统。" />
+    <meta name="keywords" content="CRM, ERP, EWP" />
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="../../../plugin/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../plugin/bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../plugin/bootstrap/css/font-src.css">
+    <!-- 公共网站头部 -->
+    <link rel="stylesheet" type="text/css" href="../../../themes/default/css/common.css" />
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../plugin/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 自定义JS -->
+    <script src="../../../js/index.js"></script>
+    <link rel="stylesheet" href="../../../themes/default/css/jquery.treetable.theme.default.css" />
+    <link rel="stylesheet" type="text/css" href="../../../themes/default/css/tree.css" />
+
+    <script language="javascript" type="text/javascript" src="../../../plugin/TableSorterV2/TableSorterV2.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../plugin/easyui-1.4/themes/gray/sale_easyui.css" />
+    <script type="text/javascript" src="../../../plugin/easyui-1.4/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../../plugin/easyui-1.4/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../../plugin/easyui-1.4/jquery.namespace.js"></script>
+    <script type="text/javascript" src="../../../plugin/easyui-1.4/jquery.easyui.winext.js"></script>
+</head>
+<body style="height:100%" class="index_page">
+<div class="easyui-layout" fit="true">
+    <div class="sale_right_table">
+        <div class="sale_right center_8958">
+            <div class="customer_top yahei">
+                <div class="customer_top_left">
+                    <a class="blue1 window_out_close" href="javascript:void(0)"><i class="bg_img sale_icon_17"></i>返回</a><b></b><span>扩展字段管理</span><em class="bg_img sale_icon_18"></em><span>表单1</span><em class="bg_img sale_icon_18"></em><span>查看已绑定分类</span>
+                </div>
+            </div>
+            <div class="titles">
+                <div class="titles_right">
+                    <span class="select_name">关系类型：</span>
+                    <div class="btn-group btn-group-select">
+                        <button type="button" class="btn btn-default dropdown-toggle font_12 l2m_btm" data-toggle="dropdown">
+                            <i class="grey4">企业知识库</i>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu font_12" role="menu" style="min-width:55px;">
+                            <li>
+                                <a id="click_01" href="javascript:void(0)" style="padding-left:12px;padding-right:10px;">企业知识库</a>
+                            </li>
+                            <li>
+                                <a id="click_02" href="javascript:void(0)" style="padding-left:12px;padding-right:10px;">公共资料库</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="select_name">分类编码：</span>
+                    <div class="btn-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control yahei" placeholder="请输入分类编码，名称..." style="height: 26px;">
+                               <span class="input-group-btn">
+                                    <button class="btn btn-default font_12" style="height: 26px;">
+                                        <i class="glyphicon glyphicon-search blue1 top_-1px"></i>
+                                    </button>
+                               </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="index_classification_table" class="panel_table_all width-whole"></div>
+            <script>$("#index_classification_table").panel({href:"index_classification_table.html"});</script>
+        </div>
+    </div>
+</div>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="../../../plugin/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../../../plugin/validate/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../plugin/validate/jquery.metadata.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery.treetable.js"></script>
+<!-- 自定义JS -->
+</body>
+</html>
